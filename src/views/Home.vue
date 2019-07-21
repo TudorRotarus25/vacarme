@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Projects />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import Projects from '@/components/Projects';
+import { ACTION_POPULATE_PROJECTS } from '@/constants/storeConstants';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    Projects,
+  },
+  created() {
+    this.$store.dispatch(ACTION_POPULATE_PROJECTS);
   },
 };
 </script>
