@@ -32,6 +32,28 @@ const projects = [
     homeText1: 'terrain',
     homeText2: 'nocturne',
   },
+  {
+    name: 'Le Grand Observatoire',
+    slug: 'le-grand-observatoire',
+    layout: 'vertical',
+    width: 60,
+    shapeUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/shapes/DESKTOP_HOMEPAGE_SHAPE_GRAND_OBSERVATOIRE.svg',
+    hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_04.png',
+    cta: 'signalétique expérimentale',
+    homeText1: 'le grand',
+    homeText2: 'observatoire',
+  },
+  {
+    name: 'Empreinte',
+    slug: 'empreinte',
+    layout: 'horizontal',
+    width: 40,
+    shapeUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/shapes/DESKTOP_HOMEPAGE_SHAPE_EMPREINTE.svg',
+    hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_05.png',
+    cta: 'signalétique expérimentale',
+    homeText1: 'empreinte',
+    homeText2: 'empreinte',
+  },
 ];
 
 export default projects;

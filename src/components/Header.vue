@@ -3,14 +3,18 @@
     <div class="header__leftLinks">
       <router-link to="/">
         <img
-          class="logo"
           src="@/assets/icons/logo.svg"
           alt="vacarme"
         >
       </router-link>
     </div>
     <div class="header__rightLinks">
-      <router-link to="/about">info</router-link>
+      <router-link to="/about">
+        <img
+          src="@/assets/icons/info.svg"
+          alt="vacarme"
+        >
+      </router-link>
     </div>
   </header>
 </template>
@@ -37,7 +41,7 @@
   }
 }
 
-.logo {
+img {
   height: 40px;
 }
 </style>

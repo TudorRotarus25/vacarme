@@ -13,6 +13,7 @@
         :src="project.hoverImageUrl"
         :alt="project.name"
       >
+      <div class="backdrop" />
       <img
         class="project__shape"
         :src="project.shapeUrl"
@@ -60,6 +61,10 @@ $projectPadding: 50px;
     .project__shape {
       display: none;
     }
+
+    .backdrop {
+      display: none;
+    }
   }
 
   &--vertical {
@@ -101,6 +106,15 @@ $projectPadding: 50px;
     position: absolute;
     top: $projectPadding;
     left: $projectPadding;
+  }
+
+  .backdrop {
+    background-color: #fff;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 1px;
+    right: 1px;
   }
 
   &__hoverImage {
