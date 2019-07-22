@@ -42,7 +42,7 @@ export default {
 
 @font-face {
   font-family: "St Latex";
-  src: url("/assets/fonts/stLatexBETA-Regular.otf");
+  src: url("assets/fonts/stLatexBETA-Regular.ttf");
 }
 
 html {
