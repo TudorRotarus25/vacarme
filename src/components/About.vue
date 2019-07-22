@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="about__left">
-      <h2>studio vacarme</h2>
+      <h1>studio vacarme</h1>
       <div class="body">
         <p>
           Vacarme est un studio de conception graphique pluridisciplinaire � basé
@@ -66,13 +66,23 @@ export default {
 <style lang="scss" scoped>
 .about {
   display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+  min-height: calc(100vh - 12rem);
 
   &__left {
-    flex-basis: 950px;
+    flex-basis: 50%;
+    margin-right: 4%;
+    font-size: 1.5rem;
   }
 
   &__right {
-    flex-basis: 660px;
+    flex-basis: 34%;
   }
+}
+
+.members {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

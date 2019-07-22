@@ -25,8 +25,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 5rem;
   padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
 
   a {
     color: #fff;
@@ -37,11 +42,11 @@
   }
 
   &__rightLinks {
-    font-size: 40px;
+    font-size: 2rem;
   }
 }
 
 img {
-  height: 40px;
+  height: 2rem;
 }
 </style>
