@@ -6,6 +6,7 @@
       ['project--vertical']: project.layout === 'vertical',
       ['project--horizontal']: project.layout === 'horizontal',
     }"
+    @click="onClick"
   >
     <div class="project__content">
       <img
@@ -19,6 +20,12 @@
         :src="project.shapeUrl"
         :alt="project.name"
       >
+      <div class="tagline tagline--top">
+        {{ project.homeText1 }}
+      </div>
+      <div class="tagline tagline--bottom">
+        {{ project.homeText2 }}
+      </div>
     </div>
     <div class="cta">
       <div class="cta__text">
@@ -42,11 +49,22 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    onClick() {
+      const { slug } = this.project;
+      this.$router.push({
+        name: 'projectDetails',
+        params: {
+          slug,
+        },
+      });
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-$projectPadding: 50px;
+$projectPadding: 7rem;
 
 .project {
   border: 1px solid #1D1D1B;
@@ -63,6 +81,10 @@ $projectPadding: 50px;
     }
 
     .backdrop {
+      display: none;
+    }
+
+    .tagline {
       display: none;
     }
   }
@@ -97,14 +119,14 @@ $projectPadding: 50px;
 
   &__content {
     position: relative;
-    padding: $projectPadding;
+    padding: ($projectPadding - 2rem) $projectPadding;
   }
 
   &__shape {
     display: block;
     width: calc(100% - #{2 * $projectPadding});
     position: absolute;
-    top: $projectPadding;
+    top: $projectPadding - 2rem;
     left: $projectPadding;
   }
 
@@ -144,6 +166,22 @@ $projectPadding: 50px;
 
   &__arrowUp img {
     width: 15px;
+  }
+}
+
+.tagline {
+  position: absolute;
+  z-index: 2;
+  font-size: 4rem;
+
+  &--top {
+    top: 12rem;
+    left: 5rem;
+  }
+
+  &--bottom {
+    bottom: 12rem;
+    right: 5rem;
   }
 }
 </style>

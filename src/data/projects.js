@@ -18,8 +18,8 @@ const projects = [
     shapeUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/shapes/DESKTOP_HOMEPAGE_SHAPE_PADUPE.svg',
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_02.png',
     cta: 'typographie & projet éditorial',
-    homeText1: 'padupe',
-    homeText2: null,
+    homeText1: null,
+    homeText2: 'padupe',
   },
   {
     name: 'Terrain Nocturne',
