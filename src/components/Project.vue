@@ -20,10 +20,16 @@
         :src="project.shapeUrl"
         :alt="project.name"
       >
-      <div class="tagline tagline--top">
+      <div
+        class="tagline tagline--top"
+        :style="`transform: rotate(${project.taglineAngle}deg)`"
+      >
         {{ project.homeText1 }}
       </div>
-      <div class="tagline tagline--bottom">
+      <div
+        class="tagline tagline--bottom"
+        :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
+      >
         {{ project.homeText2 }}
       </div>
     </div>
@@ -64,7 +70,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$projectPadding: 7rem;
+$projectPadding: 5rem;
 
 .project {
   border: 1px solid #1D1D1B;
@@ -112,7 +118,7 @@ $projectPadding: 7rem;
         white-space: nowrap;
         position: absolute;
         bottom: 0;
-        left: 10px;
+        left: 4px;
       }
     }
   }
@@ -172,16 +178,16 @@ $projectPadding: 7rem;
 .tagline {
   position: absolute;
   z-index: 2;
-  font-size: 4rem;
+  font-size: 3rem;
 
   &--top {
-    top: 12rem;
-    left: 5rem;
+    top: 7rem;
+    left: 3rem;
   }
 
   &--bottom {
-    bottom: 12rem;
-    right: 5rem;
+    bottom: 7rem;
+    right: 3rem;
   }
 }
 </style>

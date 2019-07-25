@@ -1,8 +1,14 @@
 <template>
-  <header class="header">
+  <header :class="`header ${isDarkMode ? 'header--dark' : ''}`">
     <div class="header__leftLinks">
       <router-link to="/">
         <img
+          v-if="isDarkMode"
+          src="@/assets/icons/logo-dark.svg"
+          alt="vacarme"
+        >
+        <img
+          v-else
           src="@/assets/icons/logo.svg"
           alt="vacarme"
         >
@@ -11,6 +17,12 @@
     <div class="header__rightLinks">
       <router-link to="/about">
         <img
+          v-if="isDarkMode"
+          src="@/assets/icons/info-dark.svg"
+          alt="vacarme"
+        >
+        <img
+          v-else
           src="@/assets/icons/info.svg"
           alt="vacarme"
         >
@@ -19,19 +31,34 @@
   </header>
 </template>
 
+<script>
+import { mapState } from 'vuex';
+
+export default {
+  name: 'Header',
+  computed: mapState({
+    isDarkMode: 'isDarkMode',
+  }),
+};
+</script>
+
 <style lang="scss" scoped>
 .header {
   background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
+  height: 3.5rem;
   padding: 0 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5;
+
+  &--dark {
+    background-color: #fff;
+  }
 
   a {
     color: #fff;
@@ -47,6 +74,6 @@
 }
 
 img {
-  height: 2rem;
+  height: 1.3rem;
 }
 </style>

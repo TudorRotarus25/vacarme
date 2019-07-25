@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Projects from '@/components/Projects';
+import Projects from '@/components/Projects.vue';
 import { ACTION_POPULATE_PROJECTS } from '@/constants/storeConstants';
 
 export default {

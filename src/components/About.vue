@@ -67,16 +67,17 @@ export default {
 .about {
   display: flex;
   justify-content: center;
-  padding-top: 4rem;
-  min-height: calc(100vh - 12rem);
+  padding: 4rem 0 2rem;
+  min-height: calc(100vh - 12.5rem);
 
   &__left {
     flex-basis: 50%;
     margin-right: 4%;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   &__right {
+    font-size: 1rem;
     flex-basis: 34%;
   }
 }

@@ -25,7 +25,7 @@ export default {
 @font-face {
   font-family: "Roquefort";
   src: url("assets/fonts/Roquefort-Semi-Strong.otf");
-  font-weight: 100;
+  font-weight: 600;
 }
 
 @font-face {
@@ -46,7 +46,7 @@ export default {
 }
 
 html {
-  font-size: 85%;
+  font-size: 20px;
   font-family: "St Latex", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -72,8 +72,8 @@ h3, h4, h5 {
   font-weight: normal;
 }
 
-h6 {
-  font-weight: 100;
+h5 {
+  font-weight: 600;
 }
 
 h1, h3 {
@@ -86,6 +86,7 @@ h2, h4 {
 
 h5, h6 {
   font-size: 1rem;
+  margin: 0;
 }
 
 a {
@@ -93,7 +94,11 @@ a {
   color: #1D1D1B;
 }
 
+p {
+  margin: 0 0 1.5em 0;
+}
+
 .appContent {
-  margin-top: 5rem;
+  margin-top: 3.5rem;
 }
 </style>

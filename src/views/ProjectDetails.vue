@@ -6,7 +6,10 @@
 
 <script>
 import ProjectDetails from '@/components/ProjectDetails.vue';
-import { ACTION_POPULATE_PROJECT_DETAILS } from '@/constants/storeConstants';
+import {
+  ACTION_POPULATE_PROJECT_DETAILS,
+  MUTATION_SET_DARK_MODE,
+} from '@/constants/storeConstants';
 
 export default {
   name: 'projectDetails',
@@ -16,6 +19,9 @@ export default {
   created() {
     const { slug } = this.$route.params;
     this.$store.dispatch(ACTION_POPULATE_PROJECT_DETAILS, slug);
+  },
+  beforeDestroy() {
+    this.$store.commit(MUTATION_SET_DARK_MODE, { isDarkMode: false });
   },
 };
 </script>

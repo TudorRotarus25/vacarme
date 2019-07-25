@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer :class="`footer ${isDarkMode ? 'footer--dark' : ''}`">
     <div class="footer__left">
       studio de design graphique et direction artistique basé à paris
     </div>
@@ -13,7 +13,7 @@
       </a>
       <a
         class="footerLink"
-        href=""
+        href="https://www.behance.net/studiovacarme"
         target="_blank"
       >
         behance
@@ -23,8 +23,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Footer',
+  computed: mapState({
+    isDarkMode: 'isDarkMode',
+  }),
 };
 </script>
 
@@ -35,6 +40,15 @@ export default {
   background-color: #000;
   color: #fff;
   padding: 1rem 2em;
+
+  &--dark {
+    background-color: #fff;
+    color: #000;
+
+    .footerLink {
+      color: #000;
+    }
+  }
 }
 
 .footerLink {
