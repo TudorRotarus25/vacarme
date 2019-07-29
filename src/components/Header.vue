@@ -5,12 +5,12 @@
         <img
           v-if="isDarkMode"
           src="@/assets/icons/logo-dark.svg"
-          alt="vacarme"
+          alt="studio vacarme logo"
         >
         <img
           v-else
           src="@/assets/icons/logo.svg"
-          alt="vacarme"
+          alt="studio vacarme logo"
         >
       </router-link>
     </div>
@@ -19,12 +19,12 @@
         <img
           v-if="isDarkMode"
           src="@/assets/icons/info-dark.svg"
-          alt="vacarme"
+          alt="about icon"
         >
         <img
           v-else
           src="@/assets/icons/info.svg"
-          alt="vacarme"
+          alt="about icon"
         >
       </router-link>
     </div>
@@ -43,18 +43,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styling/variables";
+@import "../styling/mixins";
+
 .header {
   background-color: #000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3.5rem;
+  height: 50px;
   padding: 0 20px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5;
+
+  @include media-breakpoint-up(lg) {
+    height: 3.5rem;
+  }
 
   &--dark {
     background-color: #fff;
@@ -74,6 +81,10 @@ export default {
 }
 
 img {
-  height: 1.3rem;
+  height: 20px;
+
+  @include media-breakpoint-up(lg) {
+    height: 1.3rem;
+  }
 }
 </style>

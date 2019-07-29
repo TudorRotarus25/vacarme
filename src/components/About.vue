@@ -4,17 +4,19 @@
       <h1>studio vacarme</h1>
       <div class="body">
         <p>
-          Vacarme est un studio de conception graphique pluridisciplinaire � basé
-          à Paris �, co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
+          Vacarme est un studio de conception graphique pluridisciplinaire
+          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
+          Valentin Jabaud, Camille Roulant et Margaux Giron.
         </p>
         <p>
           Nos formations en Design Globale, Publicité et Typographie à l’Ecole de Condé Paris, à
-          L’UAL � à Londres et à l’ECV Paris nous ont réuni vers une � approche globale de la
-          communication.
+          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réuni vers une
+          <i class="icon-8 green" /> approche globale de la communication.
         </p>
         <p>
           Nous nous accordons singulièrement sur l’élaboration d’identités visuelles, de
-          typographies, de projets éditoriaux, de Webdesign, � et de signalétiques.
+          typographies, de projets éditoriaux, de Webdesign, <i class="icon-4 pink" /> et de
+          signalétiques.
         </p>
       </div>
     </div>
@@ -64,26 +66,51 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styling/variables";
+@import "../styling/mixins";
+
 .about {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 4rem 0 2rem;
+  padding: 40px 20px 60px;
   min-height: calc(100vh - 12.5rem);
 
+  @include media-breakpoint-up(lg) {
+    padding: 4rem 0 2rem;
+  }
+
   &__left {
-    flex-basis: 50%;
-    margin-right: 4%;
-    font-size: 1.8rem;
+    flex-basis: 100%;
+    font-size: 1.5rem;
+
+    @include media-breakpoint-up(lg) {
+      flex-basis: 50%;
+      margin-right: 4%;
+    }
   }
 
   &__right {
     font-size: 1rem;
-    flex-basis: 34%;
+    flex-basis: 100%;
+
+    @include media-breakpoint-up(lg) {
+      flex-basis: 34%;
+    }
   }
 }
 
 .members {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+
+  > div {
+    margin: 0 5px 10px;
+  }
+}
+
+hr {
+  margin: 30px 0;
 }
 </style>

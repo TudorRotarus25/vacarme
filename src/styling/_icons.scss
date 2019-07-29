@@ -1,0 +1,85 @@
+[data-icon]:before {
+  font-family: "studio-vacarme" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "studio-vacarme" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-size: 0.6em;
+
+  &.yellow {
+    color: rgb(255, 210, 92);
+  }
+
+  &.red {
+    color: rgb(255, 103, 76);
+  }
+
+  &.pink {
+    color: rgb(253, 194, 203);
+  }
+
+  &.purple {
+    color: rgb(189, 165, 255);
+  }
+
+  &.blue {
+    color: rgb(110, 122, 207);
+  }
+
+  &.green {
+    color: rgb(42, 210, 169);
+  }
+}
+
+.icon-1:before {
+  content: "\61";
+}
+.icon-2:before {
+  content: "\62";
+}
+.icon-3:before {
+  content: "\63";
+}
+.icon-4:before {
+  content: "\64";
+}
+.icon-5:before {
+  content: "\65";
+}
+.icon-6:before {
+  content: "\66";
+}
+.icon-7:before {
+  content: "\67";
+}
+.icon-8:before {
+  content: "\68";
+}
+.icon-9:before {
+  content: "\69";
+}
+.icon-10:before {
+  content: "\6a";
+}

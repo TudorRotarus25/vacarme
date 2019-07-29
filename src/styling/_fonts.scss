@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Roquefort";
+  src: url("../assets/fonts/Roquefort-Semi-Strong.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Roquefort";
+  src: url("../assets/fonts/Roquefort-Standard.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Roquefort";
+  src: url("../assets/fonts/Roquefort-Strong.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "St Latex";
+  src: url("../assets/fonts/stLatexBETA-Regular.ttf");
+}
+
+@font-face {
+  font-family: "studio-vacarme";
+  src:url("../assets/fonts/studio-vacarme.eot");
+  src:url("../assets/fonts/studio-vacarme.eot?#iefix") format("embedded-opentype"),
+  url("../assets/fonts/studio-vacarme.woff") format("woff"),
+  url("../assets/fonts/studio-vacarme.ttf") format("truetype"),
+  url("../assets/fonts/studio-vacarme.svg#studio-vacarme") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,9 +1,9 @@
 <template>
   <footer :class="`footer ${isDarkMode ? 'footer--dark' : ''}`">
     <div class="footer__left">
-      studio de design graphique et direction artistique basé à paris
+      studio de design graphique <br> et direction artistique basé à paris
     </div>
-    <div class="footer_right">
+    <div class="footer__right">
       <a
         class="footerLink"
         href="https://www.instagram.com/studiovacarme/"
@@ -34,12 +34,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styling/variables";
+@import "../styling/mixins";
+
 .footer {
   display: flex;
   justify-content: space-between;
   background-color: #000;
   color: #fff;
-  padding: 1rem 2em;
+  padding: 1rem 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding: 1rem 2em;
+  }
 
   &--dark {
     background-color: #fff;
@@ -49,10 +56,21 @@ export default {
       color: #000;
     }
   }
+
+  &__right {
+    text-align: right;
+
+    a {
+      display: block;
+    }
+  }
 }
 
 .footerLink {
   color: #fff;
-  margin: 0 1rem;
+
+  @include media-breakpoint-up(lg) {
+    margin: 0 1rem;
+  }
 }
 </style>

@@ -1,0 +1,71 @@
+@import "./variables";
+@import "./fonts";
+@import "./icons";
+@import "./mixins";
+
+html {
+  font-size: 14px;
+  font-family: "St Latex", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @include media-breakpoint-up(lg) {
+    font-size: 20px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $text-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roquefort", Helvetica, Arial, sans-serif;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+h1, h2 {
+  font-weight: normal;
+
+  @include media-breakpoint-up(lg) {
+    font-weight: bold;
+  }
+}
+
+h3, h4, h5 {
+  font-weight: normal;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+h1, h3 {
+  font-size: 2rem;
+}
+
+h2, h4 {
+  font-size: 1.8rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $text-primary;
+}
+
+p {
+  margin: 0 0 1.5em 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #000;
+}

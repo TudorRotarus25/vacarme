@@ -1,17 +1,20 @@
 <template>
   <div class="home">
     <Projects />
+    <ProjectsMobile />
   </div>
 </template>
 
 <script>
 import Projects from '@/components/Projects.vue';
+import ProjectsMobile from '@/components/ProjectsMobile.vue';
 import { ACTION_POPULATE_PROJECTS } from '@/constants/storeConstants';
 
 export default {
   name: 'home',
   components: {
     Projects,
+    ProjectsMobile,
   },
   created() {
     this.$store.dispatch(ACTION_POPULATE_PROJECTS);

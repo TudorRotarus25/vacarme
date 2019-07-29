@@ -5,9 +5,8 @@
       <p
         v-for="(paragraph, index) in projectData.paragraphs"
         :key="index"
-      >
-        {{ paragraph }}
-      </p>
+        v-html="paragraph"
+      />
     </div>
     <hr class="spacer">
     <div class="projectInfo">
@@ -48,33 +47,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.project {
-  padding: 4rem 6%;
+  @import "../styling/variables";
+  @import "../styling/mixins";
 
-  &--dark {
-    background-color: #000;
-    color: #fff;
-  }
-}
+  .project {
+    padding: 40px 20px 60px;
 
-.spacer {
-  margin: 3em 0 2em;
-}
+    @include media-breakpoint-up(lg) {
+      padding: 4rem 6%;
+    }
 
-.projectInfo {
-  display: flex;
-  justify-content: space-between;
+    &--dark {
+      background-color: #000;
+      color: #fff;
 
-  &__left {
-    display: flex;
-
-    > div {
-      margin-right: 50px;
+      hr {
+        background-color: #fff;
+      }
     }
   }
 
-  &__right {
-    text-align: right;
+  .spacer {
+    margin: 20px 0;
+
+    @include media-breakpoint-up(lg) {
+      margin: 3em 0 2em;
+    }
   }
-}
+
+  .projectInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+
+    h5 {
+      font-size: 0.7rem;
+    }
+
+    &__left {
+      display: flex;
+
+      > div {
+        margin-right: 20px;
+
+        @include media-breakpoint-up(lg) {
+          margin-right: 50px;
+        }
+      }
+    }
+
+    &__right {
+      text-align: right;
+    }
+  }
 </style>

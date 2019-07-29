@@ -2,7 +2,7 @@
   <div class="projects">
     <Project
       v-for="project in projects"
-      :key="project.id"
+      :key="project.name"
       :project="project"
     />
   </div>
@@ -24,8 +24,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "../styling/variables";
+  @import "../styling/mixins";
+
   .projects {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+    }
   }
 </style>
