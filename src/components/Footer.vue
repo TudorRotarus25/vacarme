@@ -57,11 +57,23 @@ export default {
     }
   }
 
+  &__left {
+    br {
+      @include media-breakpoint-up(lg) {
+        display: none;
+      }
+    }
+  }
+
   &__right {
     text-align: right;
 
     a {
       display: block;
+
+      @include media-breakpoint-up(lg) {
+        display: inline-block;
+      }
     }
   }
 }
