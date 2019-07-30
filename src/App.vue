@@ -23,7 +23,18 @@ export default {
 </script>
 
 <style lang="scss">
-.appContent {
-  margin-top: 3.5rem;
-}
+  @import "./styling/variables";
+  @import "./styling/mixins";
+
+  .appContent {
+    margin-top: 50px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 75px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 3.5rem;
+    }
+  }
 </style>

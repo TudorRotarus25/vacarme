@@ -9,8 +9,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+
   @include media-breakpoint-up(lg) {
-    font-size: 20px;
+    font-size: 1vw;
   }
 }
 

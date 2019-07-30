@@ -112,5 +112,9 @@ export default {
 
 hr {
   margin: 30px 0;
+
+  @include media-breakpoint-up(lg) {
+    margin: 2rem 0;
+  }
 }
 </style>

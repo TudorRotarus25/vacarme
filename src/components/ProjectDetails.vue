@@ -1,7 +1,7 @@
 <template>
   <div :class="`project ${isDarkMode ? 'project--dark' : ''}`">
     <h1>{{ projectData.name }}</h1>
-    <div>
+    <div class="projectDescription">
       <p
         v-for="(paragraph, index) in projectData.paragraphs"
         :key="index"
@@ -75,13 +75,25 @@ export default {
     }
   }
 
+  .projectDescription {
+    font-size: 1.5rem;
+  }
+
   .projectInfo {
     display: flex;
     justify-content: space-between;
     font-size: 0.7rem;
 
+    @include media-breakpoint-up(md) {
+      font-size: 1rem;
+    }
+
     h5 {
       font-size: 0.7rem;
+
+      @include media-breakpoint-up(md) {
+        font-size: 1rem;
+      }
     }
 
     &__left {

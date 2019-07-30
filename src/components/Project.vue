@@ -38,10 +38,20 @@
         {{ project.cta }}
       </div>
       <span v-if="project.layout === 'vertical'" class="cta__arrowRight">
-        <img src="@/assets/icons/arrow-right.svg" alt="arrow left">
+        <svg viewBox="0 0 73.06 28.93" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m73.06 13.65c-11.36 0-26.88-5.74-36.89-13.65l-1 1.27a71.83 71.83 0 0 0 26 12.38h-61.17v1.62h61.14a71.85 71.85 0 0 0 -26 12.39l1 1.27c10-7.91 25.52-13.66 36.88-13.66zm-8.4.87v-.11l.29.05z"
+            fill="#1d1d1b"
+          />
+        </svg>
       </span>
       <span v-else class="cta__arrowUp">
-        <img src="@/assets/icons/arrow-up.svg" alt="arrow up">
+        <svg viewBox="0 0 28.99 73.21" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m29 37c-7.93-10-13.68-25.58-13.68-37h-1.64c0 11.39-5.75 26.93-13.68 37l1.27 1a71.86 71.86 0 0 0 12.42-26v61.21h1.62v-61.27a71.8 71.8 0 0 0 12.41 26.06zm-14.56-28.58c0-.1 0-.2.05-.29l.06.29z"
+            fill="#1d1d1b"
+          />
+        </svg>
       </span>
     </div>
   </div>
@@ -103,14 +113,14 @@ $projectPadding: 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px;
+      padding: 0.5rem;
     }
   }
 
   &--horizontal {
     .cta {
       border-left: 1px solid #1D1D1B;
-      padding: 10px;
+      padding: 0.5rem;
 
       &__text {
         transform: rotate(-90deg);
@@ -118,7 +128,7 @@ $projectPadding: 5rem;
         white-space: nowrap;
         position: absolute;
         bottom: 0;
-        left: 4px;
+        left: 0.3rem;
       }
     }
   }
@@ -161,17 +171,17 @@ $projectPadding: 5rem;
       color: #fff;
     }
 
-    img {
-
+    path {
+      fill: #fff;
     }
   }
 
-  &__arrowRight img {
-    height: 15px;
+  &__arrowRight svg {
+    height: 1rem;
   }
 
-  &__arrowUp img {
-    width: 15px;
+  &__arrowUp svg {
+    width: 1rem;
   }
 }
 

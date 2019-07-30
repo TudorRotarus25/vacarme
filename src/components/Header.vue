@@ -59,8 +59,13 @@ export default {
   right: 0;
   z-index: 5;
 
+  @include media-breakpoint-up(md) {
+    height: 75px;
+  }
+
   @include media-breakpoint-up(lg) {
     height: 3.5rem;
+    padding: 0 2rem;
   }
 
   &--dark {
@@ -82,6 +87,10 @@ export default {
 
 img {
   height: 20px;
+
+  @include media-breakpoint-up(md) {
+    height: 30px;
+  }
 
   @include media-breakpoint-up(lg) {
     height: 1.3rem;

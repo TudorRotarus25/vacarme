@@ -82,7 +82,7 @@ export default {
   color: #fff;
 
   @include media-breakpoint-up(lg) {
-    margin: 0 1rem;
+    margin-left: 2rem;
   }
 }
 </style>

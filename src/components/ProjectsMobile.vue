@@ -1,6 +1,7 @@
 <template>
   <div class="projectsMobile">
     <div
+      class="project"
       v-for="project in projects"
       :key="project.name"
       @click="() => onClick(project.slug)"
