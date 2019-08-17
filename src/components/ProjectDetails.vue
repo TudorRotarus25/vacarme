@@ -31,14 +31,20 @@
         </div>
       </div>
     </div>
+    <ProjectImages
+      :preset="projectData.projectImagesPreset"
+      :images="projectData.projectDesktopImages"
+    />
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex';
+import ProjectImages from './ProjectImages.vue';
 
 export default {
   name: 'ProjectDetails',
+  components: { ProjectImages },
   computed: mapState({
     isDarkMode: 'isDarkMode',
     projectData: 'projectData',
