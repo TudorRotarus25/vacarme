@@ -89,7 +89,6 @@ $projectPadding: 5rem;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  cursor: pointer;
 
   &:hover {
     .project__shape {

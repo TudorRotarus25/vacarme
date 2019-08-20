@@ -7,6 +7,7 @@
       :class="`imageContainer imageContainer-${index + 1}`"
       v-for="(image, index) in images"
       :key="index"
+      v-view
     >
       <img
         class="image"
@@ -46,8 +47,14 @@ $imageDistance: 7rem;
 }
 
 .imageContainer {
-  width: 100%;
   margin-bottom: $imageDistance;
+  transform: translateY(7rem);
+  transition: transform .7s ease-out;
+
+  &.view-in,
+  &.view-out--above {
+    transform: translate(0);
+  }
 }
 
 @import "../styling/projectImagesLayouts/preset1";
