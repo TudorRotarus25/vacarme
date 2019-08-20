@@ -10,7 +10,7 @@
       v-view
     >
       <img
-        class="image"
+        :class="{image: true, 'image--dark': isDarkMode}"
         :src="image"
         :alt="`image-${index}`"
       >
@@ -19,6 +19,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'ProjectImages',
   props: {
@@ -33,6 +35,9 @@ export default {
       default: 1,
     },
   },
+  computed: mapState({
+    isDarkMode: 'isDarkMode',
+  }),
 };
 </script>
 
@@ -54,6 +59,14 @@ $imageDistance: 7rem;
   &.view-in,
   &.view-out--above {
     transform: translate(0);
+  }
+
+  .image {
+    border: 2px solid #000;
+
+    &--dark {
+      border-color: #fff;
+    }
   }
 }
 
