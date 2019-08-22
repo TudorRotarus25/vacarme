@@ -11,9 +11,9 @@ import projectsData from './data/projects';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
-    isLoading: false,
+    isLoading: true,
     isDarkMode: false,
     projects: [],
     projectData: {},
@@ -44,3 +44,9 @@ export default new Vuex.Store({
     },
   },
 });
+
+setTimeout(() => {
+  store.state.isLoading = false;
+}, 5000);
+
+export default store;

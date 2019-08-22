@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <LoadingSpinner v-if="isLoading" />
     <div class="appContent">
       <router-view/>
     </div>
@@ -9,8 +10,10 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
 import '@/styling/main.scss';
 
 export default {
@@ -18,7 +21,11 @@ export default {
   components: {
     Header,
     Footer,
+    LoadingSpinner,
   },
+  computed: mapState({
+    isLoading: 'isLoading',
+  }),
 };
 </script>
 

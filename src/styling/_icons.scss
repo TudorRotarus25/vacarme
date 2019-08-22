@@ -1,3 +1,5 @@
+@import "variables";
+
 [data-icon]:before {
   font-family: "studio-vacarme" !important;
   content: attr(data-icon);
@@ -29,27 +31,27 @@
   font-size: 0.6em;
 
   &.yellow {
-    color: rgb(255, 210, 92);
+    color: $yellow;
   }
 
   &.red {
-    color: rgb(255, 103, 76);
+    color: $red;
   }
 
   &.pink {
-    color: rgb(253, 194, 203);
+    color: $pink;
   }
 
   &.purple {
-    color: rgb(189, 165, 255);
+    color: $purple;
   }
 
   &.blue {
-    color: rgb(110, 122, 207);
+    color: $blue;
   }
 
   &.green {
-    color: rgb(42, 210, 169);
+    color: $green;
   }
 }
 
