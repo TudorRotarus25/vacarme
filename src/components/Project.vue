@@ -32,6 +32,7 @@
         {{ project.homeText2 }}
       </div>
     </div>
+    <div :class="`backdrop ${project.color}`" />
     <div class="cta">
       <div class="cta__text">
         {{ project.cta }}
@@ -79,6 +80,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styling/variables";
 $projectPadding: 5rem;
 
 .project {
@@ -88,6 +90,8 @@ $projectPadding: 5rem;
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
 
   &:hover {
     .project__shape {
@@ -100,6 +104,10 @@ $projectPadding: 5rem;
 
     .tagline {
       opacity: 0;
+    }
+
+    .backdrop {
+      transform: translateY(-30%);
     }
   }
 
@@ -128,6 +136,42 @@ $projectPadding: 5rem;
         bottom: 0;
         left: 0.3rem;
       }
+    }
+  }
+
+  .backdrop {
+    position: absolute;
+    top: 0;
+    bottom: -60%;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transform: translateY(110%);
+    transition: all .5s ease-out;
+    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
+
+    &.yellow {
+      background-color: $yellow;
+    }
+
+    &.red {
+      background-color: $red;
+    }
+
+    &.pink {
+      background-color: $pink;
+    }
+
+    &.purple {
+      background-color: $purple;
+    }
+
+    &.blue {
+      background-color: $blue;
+    }
+
+    &.green {
+      background-color: $green;
     }
   }
 
@@ -161,6 +205,7 @@ $projectPadding: 5rem;
 .cta {
   position: relative;
   transition: all .3s;
+  background-color: #fff;
 
   &:hover {
     background-color: #000;
