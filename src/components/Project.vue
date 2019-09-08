@@ -14,7 +14,6 @@
         :src="project.hoverImageUrl"
         :alt="project.name"
       >
-      <div class="backdrop" />
       <img
         class="project__shape"
         :src="project.shapeUrl"
@@ -92,15 +91,15 @@ $projectPadding: 5rem;
 
   &:hover {
     .project__shape {
-      display: none;
+      transform: rotateY(180deg);
     }
 
-    .backdrop {
-      display: none;
+    .project__hoverImage {
+      transform: rotateY(0);
     }
 
     .tagline {
-      display: none;
+      opacity: 0;
     }
   }
 
@@ -135,6 +134,13 @@ $projectPadding: 5rem;
   &__content {
     position: relative;
     padding: ($projectPadding - 2rem) $projectPadding;
+    perspective: 1500px;
+  }
+
+  &__shape,
+  &__hoverImage {
+    backface-visibility: hidden;
+    transition: all .7s ease;
   }
 
   &__shape {
@@ -145,23 +151,16 @@ $projectPadding: 5rem;
     left: $projectPadding;
   }
 
-  .backdrop {
-    background-color: #fff;
-    position: absolute;
-    top: 1px;
-    bottom: 1px;
-    left: 1px;
-    right: 1px;
-  }
-
   &__hoverImage {
     display: block;
     width: 100%;
+    transform: rotateY(180deg);
   }
 }
 
 .cta {
   position: relative;
+  transition: all .3s;
 
   &:hover {
     background-color: #000;
@@ -188,6 +187,7 @@ $projectPadding: 5rem;
   position: absolute;
   z-index: 2;
   font-size: 3rem;
+  transition: all .3s;
 
   &--top {
     top: 7rem;

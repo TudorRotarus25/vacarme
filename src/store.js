@@ -13,7 +13,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    isLoading: true,
+    isLoading: false,
     isDarkMode: false,
     projects: [],
     projectData: {},
@@ -44,9 +44,5 @@ const store = new Vuex.Store({
     },
   },
 });
-
-setTimeout(() => {
-  store.state.isLoading = false;
-}, 5000);
 
 export default store;
