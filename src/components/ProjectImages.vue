@@ -3,6 +3,7 @@
     class="projectImages"
     :class="`preset${preset}`"
   >
+    <LoadingSpinner v-if="!isUiLoaded" />
     <div
       :class="`imageContainer imageContainer-${index + 1}`"
       v-for="(image, index) in images"
@@ -20,9 +21,11 @@
 
 <script>
 import { mapState } from 'vuex';
+import LoadingSpinner from './LoadingSpinner.vue';
 
 export default {
   name: 'ProjectImages',
+  components: { LoadingSpinner },
   props: {
     images: {
       type: Array,
@@ -32,12 +35,48 @@ export default {
     },
     preset: {
       type: Number,
-      default: 1,
+      default: 0,
     },
   },
-  computed: mapState({
-    isDarkMode: 'isDarkMode',
-  }),
+  computed: {
+    isUiLoaded() {
+      for (let index = 0; index < Math.min(3, this.numberOfImages); index += 1) {
+        if (!this.imagesLoaded[index]) {
+          return false;
+        }
+      }
+      return true;
+    },
+    ...mapState({
+      isDarkMode: 'isDarkMode',
+    }),
+  },
+  data() {
+    return {
+      imagesLoaded: {},
+      numberOfImages: 0,
+    };
+  },
+  mounted() {
+    const images = document.querySelectorAll('.projectImages img');
+
+    this.numberOfImages = images.length;
+
+    images.forEach((image, index) => {
+      if (image.complete) {
+        this.imagesLoaded = {
+          ...this.imagesLoaded,
+          [index]: true,
+        };
+      }
+      image.addEventListener('load', () => {
+        this.imagesLoaded = {
+          ...this.imagesLoaded,
+          [index]: true,
+        };
+      });
+    });
+  },
 };
 </script>
 
@@ -62,7 +101,8 @@ $imageDistance: 7rem;
   }
 
   .image {
-    border: 2px solid #000;
+    border: 1px solid #000;
+    width: 100%;
 
     &--dark {
       border-color: #fff;

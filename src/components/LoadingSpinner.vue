@@ -64,25 +64,31 @@
 <script>
 export default {
   name: 'LoadingSpinner',
+  props: {
+    shape: {
+      type: Number,
+      default() {
+        return null;
+      },
+    },
+  },
   data() {
     return {
       shapeIndex: 0,
-      interval: null,
     };
   },
   created() {
-    const numberOfShapes = 6;
-
-    this.interval = setInterval(() => {
-      if (this.shapeIndex < numberOfShapes - 1) {
-        this.shapeIndex += 1;
-        return;
-      }
-      this.shapeIndex = 0;
-    }, 3000);
+    if (!this.shape) {
+      this.shapeIndex = this.getRandomShape();
+    } else {
+      this.shapeIndex = this.shape;
+    }
   },
-  beforeDestroy() {
-    clearInterval(this.interval);
+  methods: {
+    getRandomShape() {
+      const numberOfShapes = 6;
+      return Math.floor(Math.random() * numberOfShapes);
+    },
   },
 };
 </script>
@@ -131,7 +137,7 @@ export default {
   }
 
   .shape {
-    height: 10rem;
+    height: 5rem;
     animation: rotate 2s infinite linear;
 
     path {

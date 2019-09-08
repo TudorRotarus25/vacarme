@@ -163,6 +163,20 @@ const projects = [
     cta: 'identité visuelle & design expérientiel',
     homeText1: 'empreinte',
     homeText2: 'empreinte',
+    projectDesktopImages: [
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/DESKTOP_EMPREINTE_IMAGE+04-10-min.jpg',
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/empreinte_gif.gif',
+    ],
+    projectVideos: [
+      {
+        src: 'https://player.vimeo.com/video/350094241',
+        orientation: 'landscape',
+      },
+      {
+        src: 'https://player.vimeo.com/video/350110798',
+        orientation: 'portrait',
+      },
+    ],
   },
 ];
 

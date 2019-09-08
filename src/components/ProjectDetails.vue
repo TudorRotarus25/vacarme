@@ -31,6 +31,7 @@
         </div>
       </div>
     </div>
+    <ProjectVideos :videos="projectData.projectVideos" />
     <ProjectImages
       :preset="projectData.projectImagesPreset"
       :images="projectData.projectDesktopImages"
@@ -41,10 +42,14 @@
 <script>
 import { mapState } from 'vuex';
 import ProjectImages from './ProjectImages.vue';
+import ProjectVideos from './ProjectVideos.vue';
 
 export default {
   name: 'ProjectDetails',
-  components: { ProjectImages },
+  components: {
+    ProjectImages,
+    ProjectVideos,
+  },
   computed: mapState({
     isDarkMode: 'isDarkMode',
     projectData: 'projectData',
