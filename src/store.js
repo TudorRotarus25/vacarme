@@ -4,8 +4,10 @@ import {
   MUTATION_SET_PROJECTS,
   MUTATION_SET_PROJECT_DETAILS,
   MUTATION_SET_DARK_MODE,
+  MUTATION_SET_LOADING_COLOR,
   ACTION_POPULATE_PROJECTS,
   ACTION_POPULATE_PROJECT_DETAILS,
+  ACTION_SET_LOADING_COLOR,
 } from '@/constants/storeConstants';
 import projectsData from './data/projects';
 
@@ -14,6 +16,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     isLoading: false,
+    loadingColor: null,
     isDarkMode: false,
     projects: [],
     projectData: {},
@@ -28,6 +31,9 @@ const store = new Vuex.Store({
     [MUTATION_SET_DARK_MODE]: (state, { isDarkMode }) => {
       state.isDarkMode = isDarkMode;
     },
+    [MUTATION_SET_LOADING_COLOR]: (state, { color }) => {
+      state.loadingColor = color;
+    },
   },
   actions: {
     [ACTION_POPULATE_PROJECTS]: ({ commit }) => {
@@ -41,6 +47,9 @@ const store = new Vuex.Store({
         commit(MUTATION_SET_DARK_MODE, { isDarkMode: true });
       }
       commit(MUTATION_SET_PROJECT_DETAILS, { projectData });
+    },
+    [ACTION_SET_LOADING_COLOR]: ({ commit }, color) => {
+      commit(MUTATION_SET_LOADING_COLOR, { color });
     },
   },
 });

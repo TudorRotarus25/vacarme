@@ -84,16 +84,28 @@ export default {
   lang="scss"
   scoped
 >
+@import "../styling/variables";
+@import "../styling/mixins";
+
 $imageDistance: 7rem;
 
 .projectImages {
-  margin-top: $imageDistance;
+  margin: 30px -20px 0 -20px;
+
+  @include media-breakpoint-up(lg) {
+    margin-top: $imageDistance;
+  }
 }
 
 .imageContainer {
-  margin-bottom: $imageDistance;
-  transform: translateY(7rem);
+  margin-bottom: 50px;
   transition: transform .7s ease-out;
+  transform: translateY(50px);
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $imageDistance;
+    transform: translateY(7rem);
+  }
 
   &.view-in,
   &.view-out--above {
@@ -101,8 +113,11 @@ $imageDistance: 7rem;
   }
 
   .image {
-    border: 1px solid #000;
     width: 100%;
+
+    @include media-breakpoint-up(lg) {
+      border: 1px solid #000;
+    }
 
     &--dark {
       border-color: #fff;
@@ -113,7 +128,4 @@ $imageDistance: 7rem;
 @import "../styling/projectImagesLayouts/preset1";
 @import "../styling/projectImagesLayouts/preset2";
 @import "../styling/projectImagesLayouts/preset3";
-@import "../styling/projectImagesLayouts/preset4";
-@import "../styling/projectImagesLayouts/preset5";
-@import "../styling/projectImagesLayouts/preset6";
 </style>

@@ -14,8 +14,8 @@ const projects = [
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_01.png',
     mobileImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/mobile/PHOTO_MOBILE_HOMEPAGE03.png',
     cta: 'packaging & Identité visuelle',
-    homeText1: 'dessein',
-    homeText2: 'dessein',
+    taglineTop: 'dessein',
+    taglineBottom: 'dessein',
     paragraphs: [
       'Création de l’identité visuelle <i class="icon-4 blue"></i>, du packaging et de la typographie pour dessein : une marque <i class="icon-8 yellow"></i> de savons naturels saponifiés à froid.',
       'Le territoire graphique de Dessein s’inscrit dans un univers brut renvoyant au processus de fabrication naturel et respectueux <i class="icon-5 red"></i> de l’environnement de la marque.',
@@ -34,7 +34,12 @@ const projects = [
       'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/desktop/DESKTOP_PROJECTPAGE_DESSEIN_IMAGE-09-min.jpg',
       'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/desktop/DESKTOP_PROJECTPAGE_DESSEIN_IMAGE-10-min.jpg',
     ],
-    projectMobileImages: [],
+    projectMobileImages: [
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/mobile/01_PROJECT_DESSEIN-03-min.jpg',
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/mobile/01_PROJECT_DESSEIN-04-min.jpg',
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/mobile/01_PROJECT_DESSEIN-05-min.jpg',
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/dessein/mobile/01_PROJECT_DESSEIN_Dessein++copie+3-min.jpg',
+    ],
   },
   {
     name: 'Padupe',
@@ -51,8 +56,8 @@ const projects = [
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_02.png',
     mobileImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/mobile/PHOTO_MOBILE_HOMEPAGE04.png',
     cta: 'typographie & projet éditorial',
-    homeText1: null,
-    homeText2: 'padupe',
+    taglineTop: null,
+    taglineBottom: 'padupe',
     paragraphs: [
       'Revival de la Didot <i class="icon-1 green"></i> de Deberny et Peignot (1910).',
     ],
@@ -88,8 +93,8 @@ const projects = [
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_03.png',
     mobileImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/mobile/PHOTO_MOBILE_HOMEPAGE05.png',
     cta: 'signalétique expérimentale',
-    homeText1: 'terrain',
-    homeText2: 'nocturne',
+    taglineTop: 'terrain',
+    taglineBottom: 'nocturne',
     paragraphs: [
       'Terrain nocturne est une signalétique <i class="icon-2"></i> expérimentale qui prend place dans les renfoncements de la petite ceinture à Paris. Cet espace d’expérience propose aux usagers un nouveau <i class="icon-6"></i> mode de vie nocturne les incitants à s’adapter à la nuit et non à la transformer.',
       'L’arrivée de l’éclairage artificiel <i class="icon-5"></i> dans l’espace urbain à changer notre perception de la nuit car aujourd’hui elle est un espace-temps colonisé par les hommes.',
@@ -128,8 +133,8 @@ const projects = [
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_04.png',
     mobileImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/mobile/PHOTO_MOBILE_HOMEPAGE06.png',
     cta: 'identité visuelle et direction artistique',
-    homeText1: 'le grand',
-    homeText2: 'observatoire',
+    taglineTop: 'le grand',
+    taglineBottom: 'observatoire',
     paragraphs: [
       'Refonte de l’identité visuelle du grand observatoire astronomique <i class="icon-4"></i> de Paris à l’occasionde l’exposition «Black Hole» sur les trous noirs.',
       'L’identité visuelle s’articule <i class="icon-7"></i> singulièrement autour des phénomènes ayant lieu dans l’espace. Dilatation, <i class="icon-8"></i> contraction, changement d’échelle, enfoncement sont autant de procédés <i class="icon-1"></i>graphiques utilisés afin d’exposer l’espace à son image.',
@@ -161,9 +166,13 @@ const projects = [
     hoverImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/hover/PHOTOS_HOVER_HOMPAGE_05.png',
     mobileImageUrl: 'https://vacarme-resources.s3-eu-west-1.amazonaws.com/homepage/mobile/PHOTO_MOBILE_HOMEPAGE10.png',
     cta: 'identité visuelle & design expérientiel',
-    homeText1: 'empreinte',
-    homeText2: 'empreinte',
+    taglineTop: 'empreinte',
+    taglineBottom: 'empreinte',
     projectDesktopImages: [
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/DESKTOP_EMPREINTE_IMAGE+04-10-min.jpg',
+      'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/empreinte_gif.gif',
+    ],
+    projectMobileImages: [
       'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/DESKTOP_EMPREINTE_IMAGE+04-10-min.jpg',
       'https://vacarme-resources.s3-eu-west-1.amazonaws.com/projects/empreinte/desktop/empreinte_gif.gif',
     ],

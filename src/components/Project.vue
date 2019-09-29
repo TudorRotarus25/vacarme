@@ -23,13 +23,13 @@
         class="tagline tagline--top"
         :style="`transform: rotate(${project.taglineAngle}deg)`"
       >
-        {{ project.homeText1 }}
+        {{ project.taglineTop }}
       </div>
       <div
         class="tagline tagline--bottom"
         :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
       >
-        {{ project.homeText2 }}
+        {{ project.taglineBottom }}
       </div>
     </div>
     <div :class="`backdrop ${project.color}`" />
@@ -58,6 +58,8 @@
 </template>
 
 <script>
+import { ACTION_SET_LOADING_COLOR } from '../constants/storeConstants';
+
 export default {
   name: 'Project',
   props: {
@@ -67,7 +69,10 @@ export default {
   },
   methods: {
     onClick() {
-      const { slug } = this.project;
+      const { slug, color } = this.project;
+      if (color) {
+        this.$store.dispatch(ACTION_SET_LOADING_COLOR, color);
+      }
       this.$router.push({
         name: 'projectDetails',
         params: {
@@ -107,7 +112,7 @@ $projectPadding: 5rem;
     }
 
     .backdrop {
-      transform: translateY(-30%);
+      opacity: 1;
     }
   }
 
@@ -119,14 +124,14 @@ $projectPadding: 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.5rem;
+      padding: 1rem;
     }
   }
 
   &--horizontal {
     .cta {
       border-left: 1px solid #1D1D1B;
-      padding: 0.5rem;
+      padding: 1rem;
 
       &__text {
         transform: rotate(-90deg);
@@ -134,7 +139,7 @@ $projectPadding: 5rem;
         white-space: nowrap;
         position: absolute;
         bottom: 0;
-        left: 0.3rem;
+        left: 0.8rem;
       }
     }
   }
@@ -142,13 +147,12 @@ $projectPadding: 5rem;
   .backdrop {
     position: absolute;
     top: 0;
-    bottom: -60%;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: -1;
-    transform: translateY(110%);
-    transition: all .5s ease-out;
-    clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
+    opacity: 0;
+    transition: all .6s linear;
 
     &.yellow {
       background-color: $yellow;

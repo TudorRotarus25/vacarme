@@ -1,7 +1,7 @@
 <template>
   <div
     class="loadingSpinner"
-    :class="`loadingSpinner--${shapeIndex}`"
+    :class="`loadingSpinner--${shapeIndex} ${loadingColor}`"
   >
     <div class="loadingSpinner__shapeContainer">
       <div v-if="shapeIndex === 0">
@@ -62,6 +62,8 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'LoadingSpinner',
   props: {
@@ -77,6 +79,9 @@ export default {
       shapeIndex: 0,
     };
   },
+  computed: mapState({
+    loadingColor: 'loadingColor',
+  }),
   created() {
     if (!this.shape) {
       this.shapeIndex = this.getRandomShape();
@@ -125,6 +130,30 @@ export default {
     }
 
     &--5 {
+      background-color: $red;
+    }
+
+    &.yellow {
+      background-color: $yellow;
+    }
+
+    &.green {
+      background-color: $green;
+    }
+
+    &.purple {
+      background-color: $purple;
+    }
+
+    &.blue {
+      background-color: $blue;
+    }
+
+    &.pink {
+      background-color: $pink;
+    }
+
+    &.red {
       background-color: $red;
     }
 

@@ -5,12 +5,12 @@
       <div class="body">
         <p>
           Vacarme est un studio de conception graphique pluridisciplinaire
-          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
+          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
           Valentin Jabaud, Camille Roulant et Margaux Giron.
         </p>
         <p>
-          Nos formations en Design Globale, Publicité et Typographie à l’Ecole de Condé Paris, à
-          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réuni vers une
+          Nos formations en Design Global, Publicité et Typographie à l’Ecole de Condé Paris, à
+          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réunis vers une
           <i class="icon-8 green" /> approche globale de la communication.
         </p>
         <p>

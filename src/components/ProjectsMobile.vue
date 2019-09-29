@@ -16,13 +16,13 @@
           class="tagline tagline--top"
           :style="`transform: rotate(${project.taglineAngle}deg)`"
         >
-          {{ project.homeText1 }}
+          {{ project.taglineTop }}
         </div>
         <div
           class="tagline tagline--bottom"
           :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
         >
-          {{ project.homeText2 }}
+          {{ project.taglineBottom }}
         </div>
       </div>
       <div class="cta">
@@ -85,7 +85,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 20px 15px;
     border-top: 1px solid $text-primary;
     border-bottom: 1px solid $text-primary;
 

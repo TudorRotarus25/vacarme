@@ -37,18 +37,28 @@ export default {
   lang="scss"
   scoped
 >
+  @import "../styling/variables";
+  @import "../styling/mixins";
+
   .projectVideos {
-    margin-top: 7rem;
-    margin-bottom: -7rem;
+    margin: 30px -20px -30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+      margin: 7rem 0 -7rem;
+    }
   }
 
   .projectVideo {
     flex-basis: 100%;
-    transform: translateY(7rem);
+    transform: translateY(50px);
     transition: transform .7s ease-out;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(7rem);
+    }
 
     &.view-in,
     &.view-out--above {
@@ -56,17 +66,27 @@ export default {
     }
 
     &--portrait {
-      flex-basis: 50%;
+      @include media-breakpoint-up(lg) {
+        flex-basis: 50%;
+      }
     }
   }
 
   .videoContainer {
     position: relative;
     padding-bottom: 50%;
-    margin-bottom: 7rem;
+    margin-bottom: 50px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 7rem;
+    }
 
     &--portrait {
-      padding-bottom: 85vh;
+      padding-bottom: 200%;
+
+      @include media-breakpoint-up(lg) {
+        padding-bottom: 85vh;
+      }
     }
 
     &__iframe {

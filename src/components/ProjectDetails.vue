@@ -34,7 +34,7 @@
     <ProjectVideos :videos="projectData.projectVideos" />
     <ProjectImages
       :preset="projectData.projectImagesPreset"
-      :images="projectData.projectDesktopImages"
+      :images="projectImages"
     />
   </div>
 </template>
@@ -50,10 +50,18 @@ export default {
     ProjectImages,
     ProjectVideos,
   },
-  computed: mapState({
-    isDarkMode: 'isDarkMode',
-    projectData: 'projectData',
-  }),
+  computed: {
+    ...mapState({
+      isDarkMode: 'isDarkMode',
+      projectData: 'projectData',
+    }),
+    projectImages() {
+      if (window.innerWidth < 992) {
+        return this.projectData.projectMobileImages;
+      }
+      return this.projectData.projectDesktopImages;
+    },
+  },
 };
 </script>
 
@@ -62,7 +70,7 @@ export default {
   @import "../styling/mixins";
 
   .project {
-    padding: 40px 20px 60px;
+    padding: 40px 20px 10px;
 
     @include media-breakpoint-up(lg) {
       padding: 4rem 6%;

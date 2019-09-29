@@ -1,6 +1,6 @@
 <template>
   <header :class="`header ${isDarkMode ? 'header--dark' : ''}`">
-    <div class="header__leftLinks">
+    <div class="header__links">
       <router-link to="/">
         <img
           v-if="isDarkMode"
@@ -13,9 +13,10 @@
           alt="studio vacarme logo"
         >
       </router-link>
-    </div>
-    <div class="header__rightLinks">
-      <router-link to="/about">
+      <router-link
+        class="rightLink"
+        to="/about"
+      >
         <img
           v-if="isDarkMode"
           src="@/assets/icons/info-dark.svg"
@@ -51,8 +52,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-  padding: 0 20px;
+  height: 60px;
   position: fixed;
   top: 0;
   left: 0;
@@ -60,16 +60,56 @@ export default {
   z-index: 5;
 
   @include media-breakpoint-up(md) {
-    height: 75px;
+    height: 105px;
   }
 
   @include media-breakpoint-up(lg) {
-    height: 3.5rem;
-    padding: 0 2rem;
+    height: 4.5rem;
   }
 
   &--dark {
     background-color: #fff;
+  }
+
+  &__links {
+    position: relative;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    @include media-breakpoint-up(md) {
+      padding: 0 32px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: 0 1.5rem;
+    }
+
+    .rightLink {
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+
+      @include media-breakpoint-up(md) {
+        right: 32px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        right: 1.5rem;
+      }
+
+      img {
+        height: 26px;
+
+        @include media-breakpoint-up(md) {
+          height: 52px;
+        }
+
+        @include media-breakpoint-up(lg) {
+          height: 2rem;
+        }
+      }
+    }
   }
 
   a {
@@ -79,21 +119,17 @@ export default {
   img {
     display: block;
   }
-
-  &__rightLinks {
-    font-size: 2rem;
-  }
 }
 
 img {
   height: 20px;
 
   @include media-breakpoint-up(md) {
-    height: 30px;
+    height: 40px;
   }
 
   @include media-breakpoint-up(lg) {
-    height: 1.3rem;
+    height: 1.5rem;
   }
 }
 </style>

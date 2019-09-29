@@ -34,14 +34,14 @@ export default {
   @import "./styling/mixins";
 
   .appContent {
-    margin-top: 50px;
+    margin-top: 60px;
 
     @include media-breakpoint-up(md) {
-      margin-top: 75px;
+      margin-top: 105px;
     }
 
     @include media-breakpoint-up(lg) {
-      margin-top: 3.5rem;
+      margin-top: 4.5rem;
     }
   }
 </style>

@@ -1,82 +1,84 @@
-.preset2 {
-  .imageContainer-1 {
-    .image {
-      width: 80%;
+@include media-breakpoint-up(lg) {
+  .preset2 {
+    .imageContainer-1 {
+      .image {
+        width: 80%;
+      }
     }
-  }
 
-  .imageContainer-2 {
-    text-align: right;
-    position: relative;
+    .imageContainer-2 {
+      text-align: right;
+      position: relative;
 
-    .image {
-      width: 54%;
+      .image {
+        width: 54%;
+      }
     }
-  }
 
-  .imageContainer-3 {
-    padding-left: 7rem;
-    margin-top: -17rem;
+    .imageContainer-3 {
+      padding-left: 7rem;
+      margin-top: -17rem;
 
-    .image {
-      width: 45%;
+      .image {
+        width: 45%;
+      }
     }
-  }
 
-  .imageContainer-4 {
-    text-align: right;
+    .imageContainer-4 {
+      text-align: right;
 
-    .image {
-      width: 69%;
+      .image {
+        width: 69%;
+      }
     }
-  }
 
-  .imageContainer-5 {
-    margin-top: -5rem;
-    margin-bottom: -1rem;
+    .imageContainer-5 {
+      margin-top: -5rem;
+      margin-bottom: -1rem;
 
-    .image {
-      width: 47%;
+      .image {
+        width: 47%;
+      }
     }
-  }
 
-  .imageContainer-6 {
-    text-align: right;
+    .imageContainer-6 {
+      text-align: right;
 
-    .image {
-      width: 45%;
+      .image {
+        width: 45%;
+      }
     }
-  }
 
-  .imageContainer-7 {
-    .image {
-      width: 79%;
+    .imageContainer-7 {
+      .image {
+        width: 79%;
+      }
     }
-  }
 
-  .imageContainer-8 {
-    text-align: right;
-    position: relative;
+    .imageContainer-8 {
+      text-align: right;
+      position: relative;
 
-    .image {
-      width: 54%;
+      .image {
+        width: 54%;
+      }
     }
-  }
 
-  .imageContainer-9 {
-    padding-left: 7rem;
-    margin-top: -17rem;
+    .imageContainer-9 {
+      padding-left: 7rem;
+      margin-top: -17rem;
 
-    .image {
-      width: 45%;
+      .image {
+        width: 45%;
+      }
     }
-  }
 
-  .imageContainer-10 {
-    text-align: right;
+    .imageContainer-10 {
+      text-align: right;
 
-    .image {
-      width: 69%;
+      .image {
+        width: 69%;
+      }
     }
   }
 }
