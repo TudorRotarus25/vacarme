@@ -183,6 +183,7 @@ $projectPadding: 5rem;
     position: relative;
     padding: ($projectPadding - 2rem) $projectPadding;
     perspective: 1500px;
+    min-height: 25rem;
   }
 
   &__shape,

@@ -74,6 +74,7 @@ export default {
 
     &__content {
       position: relative;
+      min-height: 120vw;
 
       &.white {
         color: #fff;

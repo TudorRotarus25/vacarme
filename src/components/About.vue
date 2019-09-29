@@ -74,7 +74,7 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
   padding: 40px 20px 60px;
-  min-height: calc(100vh - 12.5rem);
+  min-height: calc(100vh - 13.5rem);
 
   @include media-breakpoint-up(lg) {
     padding: 4rem 0 2rem;
