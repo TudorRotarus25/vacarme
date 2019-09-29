@@ -23,7 +23,7 @@
     <div class="about__right">
       <div class="details">
         <p>
-          Studio Vacarme a été co-fondé avec Valentin Jabaud, Camille Roulant et Margaux Giron.
+          Studio Vacarme a été co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
         </p>
         <p>
           Ce site a été dessiné par nos soins et développé par
