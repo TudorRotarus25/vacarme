@@ -31,8 +31,12 @@
         </div>
       </div>
     </div>
-    <ProjectVideos :videos="projectData.projectVideos" />
+    <ProjectVideos
+      v-if="!isLoading"
+      :videos="projectData.projectVideos"
+    />
     <ProjectImages
+      v-if="!isLoading"
       :preset="projectData.projectImagesPreset"
       :images="projectImages"
     />
@@ -53,6 +57,7 @@ export default {
   computed: {
     ...mapState({
       isDarkMode: 'isDarkMode',
+      isLoading: 'isLoading',
       projectData: 'projectData',
     }),
     projectImages() {
