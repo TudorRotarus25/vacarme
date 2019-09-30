@@ -80,7 +80,6 @@ export default {
 
 .footerLink {
   color: #fff;
-  cursor: pointer;
 
   @include media-breakpoint-up(lg) {
     margin-left: 2rem;

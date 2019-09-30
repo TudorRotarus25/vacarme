@@ -90,7 +90,7 @@ export default {
 $imageDistance: 7rem;
 
 .projectImages {
-  margin: 30px -20px 0 -20px;
+  margin: 50px -20px 0 -20px;
 
   @include media-breakpoint-up(lg) {
     margin-top: $imageDistance;

@@ -104,7 +104,7 @@ $projectPadding: 5rem;
     }
 
     .project__hoverImage {
-      transform: rotateY(0);
+      opacity: 1;
     }
 
     .tagline {
@@ -152,7 +152,7 @@ $projectPadding: 5rem;
     right: 0;
     z-index: -1;
     opacity: 0;
-    transition: all .6s linear;
+    transition: all .3s ease-in;
 
     &.yellow {
       background-color: $yellow;
@@ -189,7 +189,6 @@ $projectPadding: 5rem;
   &__shape,
   &__hoverImage {
     backface-visibility: hidden;
-    transition: all .7s ease;
   }
 
   &__shape {
@@ -203,7 +202,7 @@ $projectPadding: 5rem;
   &__hoverImage {
     display: block;
     width: 100%;
-    transform: rotateY(180deg);
+    opacity: 0;
   }
 }
 

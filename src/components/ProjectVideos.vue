@@ -41,7 +41,7 @@ export default {
   @import "../styling/mixins";
 
   .projectVideos {
-    margin: 30px -20px -30px;
+    margin: 50px -20px -50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
