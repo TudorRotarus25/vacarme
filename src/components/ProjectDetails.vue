@@ -32,7 +32,7 @@
       </div>
     </div>
     <ProjectVideos
-      v-if="!isLoading"
+      v-if="!isLoading && projectData.projectVideos && projectData.projectVideos.length"
       :videos="projectData.projectVideos"
     />
     <ProjectImages

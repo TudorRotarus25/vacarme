@@ -1,37 +1,37 @@
 <template>
   <div class="about">
     <div class="about__left">
-      <h1>studio vacarme</h1>
+      <h1 class="title">studio vacarme</h1>
       <div class="body">
         <p>
           Vacarme est un studio de conception graphique pluridisciplinaire
-          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
+          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
           Valentin Jabaud, Camille Roulant et Margaux Giron.
         </p>
         <p>
-          Nos formations en Design Global, Publicité et Typographie à l’Ecole de Condé Paris, à
-          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réunis vers une
+          Nos formations en Design Global, Publicité et Typographie à l’Ecole de Condé Paris, à
+          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réunis vers une
           <i class="icon-8 green" /> approche globale de la communication.
         </p>
         <p>
-          Nous nous accordons singulièrement sur l’élaboration d’identités visuelles, de
-          typographies, de projets éditoriaux, de Webdesign, <i class="icon-4 pink" /> et de
-          signalétiques.
+          Nous nous accordons singulièrement sur l’élaboration d’identités visuelles, de
+          typographies, de projets éditoriaux, de Webdesign, <i class="icon-4 pink" /> et de
+          signalétiques.
         </p>
       </div>
     </div>
     <div class="about__right">
       <div class="details">
         <p>
-          Studio Vacarme a été co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
+          Studio Vacarme a été co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
         </p>
         <p>
-          Ce site a été dessiné par nos soins et développé par
-          Tudor Rotarus. Merci à Damien Bauza pour la typographie.
+          Ce site a été dessiné par nos soins et développé par
+          Tudor Rotarus. Merci à Damien Bauza pour la typographie.
         </p>
         <p>
-          Copyright © 2019 Studio Vacarme, tous droits réservés. Toute reproduction, totale ou
-          partielle, du contenu présent sur ce site est interdite sans l’accord écrit de Studio
+          Copyright © 2019 Studio Vacarme, tous droits réservés. Toute reproduction, totale ou
+          partielle, du contenu présent sur ce site est interdite sans l’accord écrit de Studio
           Vacarme.
         </p>
       </div>
@@ -78,6 +78,10 @@ export default {
 
   @include media-breakpoint-up(lg) {
     padding: 4rem 0 2rem;
+  }
+
+  .title {
+    font-weight: 600;
   }
 
   &__left {

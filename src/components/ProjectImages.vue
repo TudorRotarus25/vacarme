@@ -93,7 +93,7 @@ $imageDistance: 7rem;
   margin: 50px -20px 0 -20px;
 
   @include media-breakpoint-up(lg) {
-    margin-top: $imageDistance;
+    margin: $imageDistance 0 0;
   }
 }
 

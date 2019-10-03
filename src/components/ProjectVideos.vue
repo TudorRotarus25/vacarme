@@ -41,13 +41,13 @@ export default {
   @import "../styling/mixins";
 
   .projectVideos {
-    margin: 50px -20px -50px;
+    margin: 0 -20px 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 
     @include media-breakpoint-up(lg) {
-      margin: 7rem 0 -7rem;
+      margin: 0 0 7rem;
     }
   }
 
@@ -75,10 +75,10 @@ export default {
   .videoContainer {
     position: relative;
     padding-bottom: 50%;
-    margin-bottom: 50px;
+    margin-top: 50px;
 
     @include media-breakpoint-up(lg) {
-      margin-bottom: 7rem;
+      margin-top: 7rem;
     }
 
     &--portrait {
