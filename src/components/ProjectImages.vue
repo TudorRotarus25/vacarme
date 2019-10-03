@@ -14,6 +14,7 @@
         :class="{image: true, 'image--dark': isDarkMode}"
         :src="image"
         :alt="`image-${index}`"
+        draggable="false"
       >
     </div>
   </div>

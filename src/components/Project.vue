@@ -13,11 +13,13 @@
         class="project__hoverImage"
         :src="project.hoverImageUrl"
         :alt="project.name"
+        draggable="false"
       >
       <img
         class="project__shape"
         :src="project.shapeUrl"
         :alt="project.name"
+        draggable="false"
       >
       <div
         class="tagline tagline--top"
@@ -97,6 +99,7 @@ $projectPadding: 5rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  user-select: none;
 
   &:hover {
     .project__shape {
@@ -193,7 +196,6 @@ $projectPadding: 5rem;
   &__content {
     position: relative;
     padding: ($projectPadding - 2rem) $projectPadding;
-    perspective: 1500px;
     min-height: 25rem;
   }
 
