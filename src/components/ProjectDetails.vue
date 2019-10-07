@@ -1,6 +1,6 @@
 <template>
   <div :class="`project ${isDarkMode ? 'project--dark' : ''}`">
-    <h1>{{ projectData.name }}</h1>
+    <h1 class="title">{{ projectData.name }}</h1>
     <div class="projectDescription">
       <p
         v-for="(paragraph, index) in projectData.paragraphs"
@@ -88,6 +88,14 @@ export default {
       hr {
         background-color: #fff;
       }
+    }
+  }
+
+  .title {
+    font-weight: 600;
+
+    @include media-breakpoint-up(lg) {
+      font-weight: bold;
     }
   }
 

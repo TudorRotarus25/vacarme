@@ -6,7 +6,7 @@
       :key="project.name"
       @click="() => onClick(project.slug)"
     >
-      <div :class="`projectsMobile__content ${project.whiteTagline ? 'white' : ''}`">
+      <div :class="`projectsMobile__content ${project.taglineDarkMode ? 'white' : ''}`">
         <img
           class="projectsMobile__image"
           :src="project.mobileImageUrl"
