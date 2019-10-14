@@ -13,11 +13,13 @@
         class="project__hoverImage"
         :src="project.hoverImageUrl"
         :alt="project.name"
+        draggable="false"
       >
       <img
         class="project__shape"
         :src="project.shapeUrl"
         :alt="project.name"
+        draggable="false"
       >
       <div
         class="tagline tagline--top"
@@ -97,6 +99,7 @@ $projectPadding: 5rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
+  user-select: none;
 
   &:hover {
     .project__shape {
@@ -113,6 +116,18 @@ $projectPadding: 5rem;
 
     .backdrop {
       opacity: 1;
+    }
+
+    .cta {
+      background-color: #000;
+
+      .cta__text {
+        color: #fff;
+      }
+
+      path {
+        fill: #fff;
+      }
     }
   }
 
@@ -152,7 +167,6 @@ $projectPadding: 5rem;
     right: 0;
     z-index: -1;
     opacity: 0;
-    transition: all .3s ease-in;
 
     &.yellow {
       background-color: $yellow;
@@ -182,7 +196,6 @@ $projectPadding: 5rem;
   &__content {
     position: relative;
     padding: ($projectPadding - 2rem) $projectPadding;
-    perspective: 1500px;
     min-height: 25rem;
   }
 
@@ -208,20 +221,7 @@ $projectPadding: 5rem;
 
 .cta {
   position: relative;
-  transition: all .3s;
   background-color: #fff;
-
-  &:hover {
-    background-color: #000;
-
-    .cta__text {
-      color: #fff;
-    }
-
-    path {
-      fill: #fff;
-    }
-  }
 
   &__arrowRight svg {
     height: 1rem;
@@ -236,7 +236,6 @@ $projectPadding: 5rem;
   position: absolute;
   z-index: 2;
   font-size: 3rem;
-  transition: all .3s;
 
   &--top {
     top: 7rem;

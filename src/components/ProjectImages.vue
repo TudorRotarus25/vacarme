@@ -14,6 +14,7 @@
         :class="{image: true, 'image--dark': isDarkMode}"
         :src="image"
         :alt="`image-${index}`"
+        draggable="false"
       >
     </div>
   </div>
@@ -93,7 +94,7 @@ $imageDistance: 7rem;
   margin: 50px -20px 0 -20px;
 
   @include media-breakpoint-up(lg) {
-    margin-top: $imageDistance;
+    margin: $imageDistance 0 0;
   }
 }
 
