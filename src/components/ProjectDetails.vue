@@ -12,21 +12,21 @@
     <div class="projectInfo">
       <div class="projectInfo__left">
         <div>
-          <h5>Projet</h5>
+          <h2 class="h5">Projet</h2>
           <div>{{ projectData.project }}</div>
         </div>
         <div>
-          <h5>Domaine</h5>
+          <h2 class="h5">Domaine</h2>
           <div>{{ projectData.domain }}</div>
         </div>
         <div>
-          <h5>Année</h5>
+          <h2 class="h5">Année</h2>
           <div>{{ projectData.year }}</div>
         </div>
       </div>
       <div class="projectInfo__right">
         <div>
-          <h5>Client</h5>
+          <h2 class="h5">Client</h2>
           <div>{{ projectData.client }}</div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export default {
       font-size: 1rem;
     }
 
-    h5 {
+    .h5 {
       font-size: 0.7rem;
 
       @include media-breakpoint-up(md) {

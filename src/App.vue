@@ -10,6 +10,7 @@
       class="cursorIcon"
       src="@/assets/icons/mouse.svg"
       ref="cursorIcon"
+      alt="mouse cursor"
     >
     <Header />
     <LoadingSpinner v-if="isLoading" />
