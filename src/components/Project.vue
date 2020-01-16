@@ -12,13 +12,13 @@
       <img
         class="project__hoverImage"
         :src="project.hoverImageUrl"
-        :alt="project.name"
+        :alt="project.slug"
         draggable="false"
       >
       <img
         class="project__shape"
         :src="project.shapeUrl"
-        :alt="project.name"
+        :alt="project.slug"
         draggable="false"
       >
       <div

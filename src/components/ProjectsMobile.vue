@@ -10,7 +10,7 @@
         <img
           class="projectsMobile__image"
           :src="project.mobileImageUrl"
-          alt="project.name"
+          alt="project.slug"
         >
         <div
           class="tagline tagline--top"
