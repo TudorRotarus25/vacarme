@@ -30,7 +30,7 @@
           Tudor Rotarus. Merci à Damien Bauza pour la typographie.
         </p>
         <p>
-          Copyright © 2019 Studio Vacarme, tous droits réservés. Toute reproduction, totale ou
+          Copyright © 2020 Studio Vacarme, tous droits réservés. Toute reproduction, totale ou
           partielle, du contenu présent sur ce site est interdite sans l’accord écrit de Studio
           Vacarme.
         </p>
