@@ -10,5 +10,14 @@ export default {
   components: {
     About,
   },
+  metaInfo: {
+    title: 'Studio Vacarme — Studio design graphique Paris',
+    meta: [
+      {
+        name: 'description',
+        content: 'Identités Visuelles, Typographies, Edition, Webdesign (UI/UX), Signalétique etc.',
+      },
+    ],
+  },
 };
 </script>

@@ -1,10 +1,15 @@
 <template>
   <div class="projectsMobile">
-    <div
+    <router-link
+      :to="{
+        name: 'projectDetails',
+        params: {
+          slug: project.slug,
+        },
+      }"
       class="project"
       v-for="project in projects"
       :key="project.name"
-      @click="() => onClick(project.slug)"
     >
       <div :class="`projectsMobile__content ${project.taglineDarkMode ? 'white' : ''}`">
         <img
@@ -33,7 +38,7 @@
           alt="arrow left"
         >
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -45,16 +50,6 @@ export default {
   computed: mapState({
     projects: 'projects',
   }),
-  methods: {
-    onClick(slug) {
-      this.$router.push({
-        name: 'projectDetails',
-        params: {
-          slug,
-        },
-      });
-    },
-  },
 };
 </script>
 

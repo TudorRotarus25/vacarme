@@ -1,7 +1,9 @@
 import Vue from 'vue';
+import VueMeta from 'vue-meta';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 
+Vue.use(VueMeta);
 Vue.use(Router);
 
 export default new Router({

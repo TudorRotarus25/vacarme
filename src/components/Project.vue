@@ -1,5 +1,11 @@
 <template>
-  <div
+  <router-link
+    :to="{
+      name: 'projectDetails',
+      params: {
+        slug: project.slug,
+      },
+    }"
     :style="{ flexBasis: `${project.width}%` }"
     :class="{
       project: true,
@@ -56,7 +62,7 @@
         </svg>
       </span>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -71,16 +77,10 @@ export default {
   },
   methods: {
     onClick() {
-      const { slug, color } = this.project;
+      const { color } = this.project;
       if (color) {
         this.$store.dispatch(ACTION_SET_LOADING_COLOR, color);
       }
-      this.$router.push({
-        name: 'projectDetails',
-        params: {
-          slug,
-        },
-      });
     },
   },
 };
