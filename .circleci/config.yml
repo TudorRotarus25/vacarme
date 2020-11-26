@@ -27,8 +27,8 @@ jobs:
       - attach_workspace:
           at: ~/vacarme
       - aws-s3/sync:
-          from: dist/
-          to: s3://studiovacarme.fr
+          from: .
+          to: s3://studiovacarme.com
 orbs:
   aws-s3: circleci/aws-s3@2.0.0
 workflows:
