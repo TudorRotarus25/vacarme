@@ -17,6 +17,16 @@ export default {
         name: 'description',
         content: 'Identités Visuelles, Typographies, Edition, Webdesign (UI/UX), Signalétique etc.',
       },
+      {
+        name: 'og:url',
+        content: 'https://studiovacarme.com/about',
+      },
+    ],
+    link: [
+      {
+        rel: 'canonical',
+        href: 'https://studiovacarme.com/about',
+      },
     ],
   },
 };

@@ -44,6 +44,16 @@ export default {
           name: 'description',
           content: metaDescription || defaultDescription,
         },
+        {
+          name: 'og:url',
+          content: `https://studiovacarme.com/project/${encodeURI(name)}`,
+        },
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: `https://studiovacarme.com/project/${encodeURI(name)}`,
+        },
       ],
     };
   },

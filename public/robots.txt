@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow:
 
-Sitemap: https://studiovacarme.fr/sitemap.xml
+Sitemap: https://studiovacarme.com/sitemap.xml
