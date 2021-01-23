@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: "St Latex";
-  src: url("../assets/fonts/stLatexBETA-Regular.otf");
+  src: url("../assets/fonts/AnyConv.com__stLatexBETA-Regular.woff");
 }
 
 @font-face {
@@ -30,4 +30,23 @@
   url("../assets/fonts/studio-vacarme.svg#studio-vacarme") format("svg");
   font-weight: normal;
   font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../assets/fonts/AnyConv.com__NeueMontreal-Regular.woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../assets/fonts/AnyConv.com__NeueMontreal-Medium.woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url("../assets/fonts/AnyConv.com__NeueMontreal-MediumItalic.woff");
+  font-weight: bold;
+  font-style: italic;
 }

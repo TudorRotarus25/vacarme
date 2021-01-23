@@ -1,12 +1,17 @@
 $grid-breakpoints: (
-  xs: 0,
+  xs: 355px,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px
 ) !default;
 
+$color-accent: #B9A7F9;
+$color-border: #1D1D1B;
+
 $text-primary: #1D1D1B;
+
+$black: #000;
 
 $yellow: rgb(255, 210, 92);
 $red: rgb(255, 103, 76);

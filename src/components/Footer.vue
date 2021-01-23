@@ -1,7 +1,7 @@
 <template>
-  <footer :class="`footer ${isDarkMode ? 'footer--dark' : ''}`">
+  <footer :class="`footer ${isDarkMode ? 'footer--dark' : ''} secondary-font`">
     <div class="footer__left">
-      studio de design graphique <br> et direction artistique basé à paris
+      Copyright © 2021 Studio Vacarme, tous droits réservés.
     </div>
     <div class="footer__right">
       <a

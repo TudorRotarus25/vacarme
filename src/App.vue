@@ -1,17 +1,5 @@
 <template>
-  <div
-    id="app"
-    @mousemove="onMouseMove"
-    @scroll="onMouseMove"
-    @mouseleave="onMouseLeave"
-  >
-    <img
-      v-show="isMouseVisible"
-      class="cursorIcon"
-      src="@/assets/icons/mouse.svg"
-      ref="cursorIcon"
-      alt="mouse cursor"
-    >
+  <div id="app">
     <Header />
     <LoadingSpinner v-if="isLoading" />
     <div class="appContent">
@@ -43,15 +31,6 @@ export default {
       isMouseVisible: true,
     };
   },
-  methods: {
-    onMouseMove(event) {
-      this.isMouseVisible = true;
-      this.$refs.cursorIcon.setAttribute('style', `transform: matrix(1, 0, 0, 1, ${event.clientX}, ${event.clientY});`);
-    },
-    onMouseLeave() {
-      this.isMouseVisible = false;
-    },
-  },
 };
 </script>
 
@@ -77,7 +56,6 @@ export default {
     position: fixed;
     left: 0;
     top: 0;
-    cursor: none;
     pointer-events: none;
     z-index: 11;
 

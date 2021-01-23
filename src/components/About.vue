@@ -1,58 +1,43 @@
 <template>
   <div class="about">
-    <div class="about__left">
-      <h1 class="title">studio vacarme</h1>
-      <div class="body">
-        <p>
-          Vacarme est un studio de conception graphique pluridisciplinaire
-          <i class="icon-6 purple" /> basé à Paris <i class="icon-2 yellow" />, co-fondé par
-          Valentin Jabaud, Camille Roulant et Margaux Giron.
-        </p>
-        <p>
-          Nos formations en Design Global, Publicité et Typographie à l’Ecole de Condé Paris, à
-          L’UAL <i class="icon-2 red" /> à Londres et à l’ECV Paris nous ont réunis vers une
-          <i class="icon-8 green" /> approche globale de la communication.
-        </p>
-        <p>
-          Nous nous accordons singulièrement sur l’élaboration d’identités visuelles, de
-          typographies, de projets éditoriaux, de Webdesign, <i class="icon-4 pink" /> et de
-          signalétiques.
-        </p>
-      </div>
+    <div class="info">
+      <p>
+        Vacarme est un studio de <span class="emphasis">conception graphique pluridisciplinaire</span>
+        basé à Paris, co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
+      </p>
+      <p>
+        Nos formations en Design Global, Publicité et Typographie à l’Ecole de Condé Paris, à L’UAL
+        à Londres et à l’ECV Paris nous ont réunis vers une <span class="emphasis">approche globale
+        de la communication.</span>
+      </p>
+      <p>
+        Nous nous accordons singulièrement sur l’élaboration de: <span class="emphasis">direction
+        artistique, identités visuelles, typographies, packaging, design éditorial, web design,
+        motion design, signalétiques.</span>
+      </p>
     </div>
-    <div class="about__right">
-      <div class="details">
-        <p>
-          Studio Vacarme a été co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.
-        </p>
-        <p>
-          Ce site a été dessiné par nos soins et développé par
-          Tudor Rotarus. Merci à Damien Bauza pour la typographie.
-        </p>
-        <p>
-          Copyright © 2020 Studio Vacarme, tous droits réservés. Toute reproduction, totale ou
-          partielle, du contenu présent sur ce site est interdite sans l’accord écrit de Studio
-          Vacarme.
-        </p>
+    <div class="team">
+      <div class="team__image-container">
+        <img class="team__image" src="../assets/images/about-image.png" alt="Studio Vacarme team">
       </div>
-      <hr>
-      <div class="contact">
-        <p>
+      <div>
+        <div class="team__email">
           hello@studiovacarme.com
-        </p>
-      </div>
-      <div class="members">
-        <div>
-          <div>Camille Roulant</div>
-          <div>06 87 39 10 92</div>
         </div>
-        <div>
-          <div>Margaux Giron</div>
-          <div>06 77 06 51 83</div>
-        </div>
-        <div>
-          <div>Valentin Jabaud</div>
-          <div>06 74 48 74 03</div>
+        <div class="team__members">
+          <div class="member" v-for="member in members" :key="member.email">
+            <div class="member__left">
+              <div class="member__name">
+                {{member.name}}
+              </div>
+              <div class="member__email secondary-font">
+                {{member.email}}
+              </div>
+            </div>
+            <div class="member__right secondary-font">
+              {{member.phoneNumber}}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -62,6 +47,29 @@
 <script>
 export default {
   name: 'About',
+  data() {
+    const members = [
+      {
+        name: 'Camille Roulant',
+        email: 'camille@studiovacarme.com',
+        phoneNumber: '+33 6 87 39 10 92',
+      },
+      {
+        name: 'Valentin Jabaud',
+        email: 'valentin@studiovacarme.com',
+        phoneNumber: '+33 6 74 48 74 03',
+      },
+      {
+        name: 'Margaux Giron',
+        email: 'margaux@studiovacarme.com',
+        phoneNumber: '+33 6 77 06 51 83',
+      },
+    ];
+
+    return {
+      members,
+    };
+  },
 };
 </script>
 
@@ -70,55 +78,92 @@ export default {
 @import "../styling/mixins";
 
 .about {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 40px 20px 60px;
-  min-height: calc(100vh - 13.5rem);
+  font-size: 30px;
+  line-height: 35px;
 
   @include media-breakpoint-up(lg) {
-    padding: 4rem 0 2rem;
+    display: flex;
+  }
+}
+
+.info {
+  padding: 20px 20px 0;
+
+  @include media-breakpoint-up(lg) {
+    flex-grow: 1;
   }
 
-  .title {
-    font-weight: 600;
+  p {
+    max-width: 860px;
+  }
+}
+
+.team {
+  background-color: $color-accent;
+  border-top: 1px solid $black;
+
+  @include media-breakpoint-up(lg) {
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 400px;
+    height: calc(100vh - 4.5rem - 3.1rem);
+    border-top: 0;
+    border-left: 1px solid $black;
+    display: flex;
+    flex-direction: column;
   }
 
-  &__left {
-    flex-basis: 100%;
-    font-size: 1.5rem;
-
+  &__image-container {
     @include media-breakpoint-up(lg) {
-      flex-basis: 50%;
-      margin-right: 4%;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
     }
   }
 
-  &__right {
-    font-size: 1rem;
-    flex-basis: 100%;
+  &__image {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    padding: 110px 0 100px;
+  }
+
+  &__email {
+    font-size: calc(9vw - 3px);
+    line-height: calc(9vw + 3px);
+    text-align: center;
+    margin-bottom: 12px;
 
     @include media-breakpoint-up(lg) {
-      flex-basis: 34%;
+      font-size: 32.5px;
+      line-height: 35px;
+    }
+  }
+
+  &__members {
+    .member {
+      font-size: 13px;
+      line-height: 15px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid $color-border;
+      padding: 12px 19px;
+
+      @include media-breakpoint-up(xs) {
+        font-size: 16px;
+        line-height: 18px;
+      }
+
+      &__right {
+        margin-left: auto;
+        text-align: right;
+      }
     }
   }
 }
 
-.members {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  > div {
-    margin: 0 5px 10px;
-  }
-}
-
-hr {
-  margin: 30px 0;
-
-  @include media-breakpoint-up(lg) {
-    margin: 2rem 0;
-  }
+.emphasis {
+  font-style: italic;
+  font-weight: bold;
 }
 </style>

@@ -5,7 +5,7 @@
 
 html {
   font-size: 14px;
-  font-family: "St Latex", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -15,6 +15,7 @@ html {
 
   @include media-breakpoint-up(lg) {
     font-size: 1vw;
+    line-height: 1.1vw;
   }
 }
 
@@ -22,20 +23,9 @@ body {
   margin: 0;
   padding: 0;
   color: $text-primary;
-
-  @include media-breakpoint-up(lg) {
-    cursor: none;
-  }
-}
-
-a {
-  @include media-breakpoint-up(lg) {
-    cursor: none;
-  }
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roquefort", sans-serif;
   margin-top: 0;
   margin-bottom: 1em;
 }
@@ -82,4 +72,8 @@ hr {
   border: 0;
   height: 1px;
   background-color: #000;
+}
+
+.secondary-font {
+  font-family: "St Latex", sans-serif;
 }
