@@ -43,13 +43,21 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
-
 export default {
   name: 'ProjectsMobile',
-  computed: mapState({
-    projects: 'projects',
-  }),
+  props: {
+    category: String,
+  },
+  computed: {
+    projects() {
+      if (!this.category) {
+        return this.$store.state.projects;
+      }
+
+      return this.$store.state.projects
+        .filter((project) => project.categories.includes(this.category));
+    },
+  },
 };
 </script>
 

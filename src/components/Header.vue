@@ -13,33 +13,46 @@
           alt="studio vacarme logo"
         >
       </router-link>
-      <router-link
-        class="rightLink"
-        to="/about"
+      <button
+        class="rightLink secondary-font"
+        @click="onMenuOpen"
       >
-        <img
-          v-if="isDarkMode"
-          src="@/assets/icons/info-dark.svg"
-          alt="about icon"
-        >
-        <img
-          v-else
-          src="@/assets/icons/info.svg"
-          alt="about icon"
-        >
-      </router-link>
+        menu
+      </button>
     </div>
+    <BurgerMenu
+      v-if="isMenuOpen"
+      :onMenuClose="onMenuClose"
+    />
   </header>
 </template>
 
 <script>
 import { mapState } from 'vuex';
 
+import BurgerMenu from '@/components/BurgerMenu.vue';
+
 export default {
   name: 'Header',
+  components: {
+    BurgerMenu,
+  },
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
   computed: mapState({
     isDarkMode: 'isDarkMode',
   }),
+  methods: {
+    onMenuClose() {
+      this.isMenuOpen = false;
+    },
+    onMenuOpen() {
+      this.isMenuOpen = true;
+    },
+  },
 };
 </script>
 
@@ -49,9 +62,6 @@ export default {
 
 .header {
   background-color: #000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 60px;
   position: fixed;
   top: 0;
@@ -72,10 +82,13 @@ export default {
   }
 
   &__links {
-    position: relative;
     padding: 0 20px;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     @include media-breakpoint-up(md) {
       padding: 0 32px;
@@ -86,28 +99,16 @@ export default {
     }
 
     .rightLink {
-      position: absolute;
-      bottom: 0;
-      right: 20px;
+      font-size: 26px;
+      color: $white;
+      padding: 0;
 
       @include media-breakpoint-up(md) {
-        right: 32px;
+        font-size: 52px;
       }
 
       @include media-breakpoint-up(lg) {
-        right: 1.5rem;
-      }
-
-      img {
-        height: 26px;
-
-        @include media-breakpoint-up(md) {
-          height: 52px;
-        }
-
-        @include media-breakpoint-up(lg) {
-          height: 2rem;
-        }
+        font-size: 2rem;
       }
     }
   }

@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import Project from './Project.vue';
 
 export default {
@@ -17,9 +16,19 @@ export default {
   components: {
     Project,
   },
-  computed: mapState({
-    projects: 'projects',
-  }),
+  props: {
+    category: String,
+  },
+  computed: {
+    projects() {
+      if (!this.category) {
+        return this.$store.state.projects;
+      }
+
+      return this.$store.state.projects
+        .filter((project) => project.categories.includes(this.category));
+    },
+  },
 };
 </script>
 

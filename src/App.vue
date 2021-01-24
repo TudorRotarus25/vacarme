@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'bottom-spacing': isBottomBarVisible }">
     <Header />
     <LoadingSpinner v-if="isLoading" />
     <div class="appContent">
@@ -29,7 +29,13 @@ export default {
   data() {
     return {
       isMouseVisible: true,
+      isBottomBarVisible: false,
     };
+  },
+  watch: {
+    $route(to) {
+      this.isBottomBarVisible = to.name === 'category';
+    },
   },
 };
 </script>
@@ -61,6 +67,14 @@ export default {
 
     @include media-breakpoint-up(lg) {
       display: block;
+    }
+  }
+
+  .bottom-spacing {
+    margin-bottom: 46px;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 70px;
     }
   }
 </style>

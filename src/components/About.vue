@@ -18,7 +18,7 @@
     </div>
     <div class="team">
       <div class="team__image-container">
-        <img class="team__image" src="../assets/images/about-image.png" alt="Studio Vacarme team">
+        <img class="team__image" src="@/assets/images/about-image.png" alt="Studio Vacarme team">
       </div>
       <div>
         <div class="team__email">

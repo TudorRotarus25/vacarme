@@ -40,12 +40,22 @@ const store = new Vuex.Store({
     },
   },
   actions: {
-    [ACTION_POPULATE_PROJECTS]: async ({ commit }) => {
+    [ACTION_POPULATE_PROJECTS]: async ({ commit, state }) => {
+      if (state.projects.length) {
+        return;
+      }
+
       try {
         commit(MUTATION_SET_IS_LOADING, { isLoading: true });
         const response = await axios.get('/projects');
         commit(MUTATION_SET_IS_LOADING, { isLoading: false });
-        const projects = response.data;
+        const projects = response.data.map((data) => {
+          const categories = data.cta.split(/[,&]/).map((category) => category.trim().toLowerCase());
+          return {
+            ...data,
+            categories,
+          };
+        });
         commit(MUTATION_SET_PROJECTS, { projects });
       } catch (e) {
         console.error(e);
@@ -70,6 +80,21 @@ const store = new Vuex.Store({
     },
     [ACTION_SET_LOADING_COLOR]: ({ commit }, color) => {
       commit(MUTATION_SET_LOADING_COLOR, { color });
+    },
+  },
+  getters: {
+    categories: (state) => {
+      const uniqueCategories = new Set();
+      state.projects.forEach((project) => {
+        if (!project.categories) {
+          return;
+        }
+        project.categories.forEach((category) => {
+          uniqueCategories.add(category);
+        });
+      });
+
+      return Array.from(uniqueCategories).sort();
     },
   },
 });

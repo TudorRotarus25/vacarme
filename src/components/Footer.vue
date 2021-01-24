@@ -18,6 +18,12 @@
       >
         behance
       </a>
+      <router-link
+        class="footerLink"
+        to="/about"
+      >
+        contact
+      </router-link>
     </div>
   </footer>
 </template>
