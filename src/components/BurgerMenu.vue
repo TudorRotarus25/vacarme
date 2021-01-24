@@ -82,6 +82,7 @@ export default {
   right: 0;
   background-color: $black;
   color: $white;
+  z-index: 10;
 }
 
 .header {

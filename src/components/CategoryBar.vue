@@ -39,7 +39,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 3;
 
   @include media-breakpoint-up(md) {
     font-size: 40px;
