@@ -5,6 +5,7 @@
 
 html {
   font-size: 14px;
+  line-height: 1.2;
   font-family: "Neue Montreal", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,7 +16,6 @@ html {
 
   @include media-breakpoint-up(lg) {
     font-size: 1vw;
-    line-height: 1.1vw;
   }
 }
 
