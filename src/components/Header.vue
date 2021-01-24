@@ -14,7 +14,7 @@
         >
       </router-link>
       <button
-        class="rightLink secondary-font"
+        :class="`rightLink secondary-font ${isDarkMode && 'dark'}`"
         @click="onMenuOpen"
       >
         menu
@@ -100,15 +100,22 @@ export default {
 
     .rightLink {
       font-size: 26px;
+      line-height: 28px;
       color: $white;
       padding: 0;
 
+      &.dark {
+        color: $black;
+      }
+
       @include media-breakpoint-up(md) {
         font-size: 52px;
+        line-height: 54px;
       }
 
       @include media-breakpoint-up(lg) {
         font-size: 2rem;
+        line-height: 2.2rem;
       }
     }
   }
