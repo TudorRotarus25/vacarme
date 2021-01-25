@@ -1,17 +1,13 @@
 <template>
-  <div
-    class="projectImages"
-    :class="`preset${preset}`"
-  >
+  <div class="projectImages">
     <LoadingSpinner v-if="!isUiLoaded" />
     <div
       :class="`imageContainer imageContainer-${index + 1}`"
-      v-for="(image, index) in images"
-      :key="index"
-      v-view
+      v-for="image in images"
+      :key="image"
     >
       <img
-        :class="{image: true, 'image--dark': isDarkMode}"
+        class="image"
         :src="image"
         :alt="`image-${index}`"
         draggable="false"
@@ -33,10 +29,6 @@ export default {
       default() {
         return [];
       },
-    },
-    preset: {
-      type: Number,
-      default: 0,
     },
   },
   computed: {
@@ -88,45 +80,10 @@ export default {
 @import "../styling/variables";
 @import "../styling/mixins";
 
-$imageDistance: 7rem;
-
-.projectImages {
-  margin: 50px -20px 0 -20px;
-
-  @include media-breakpoint-up(lg) {
-    margin: $imageDistance 0 0;
-  }
-}
-
 .imageContainer {
-  margin-bottom: 50px;
-  transition: transform .7s ease-out;
-  transform: translateY(50px);
-
-  @include media-breakpoint-up(lg) {
-    margin-bottom: $imageDistance;
-    transform: translateY(7rem);
-  }
-
-  &.view-in,
-  &.view-out--above {
-    transform: translate(0);
-  }
-
   .image {
+    display: block;
     width: 100%;
-
-    @include media-breakpoint-up(lg) {
-      border: 1px solid #000;
-    }
-
-    &--dark {
-      border-color: #fff;
-    }
   }
 }
-
-@import "../styling/projectImagesLayouts/preset1";
-@import "../styling/projectImagesLayouts/preset2";
-@import "../styling/projectImagesLayouts/preset3";
 </style>

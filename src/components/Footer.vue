@@ -50,17 +50,8 @@ export default {
   color: #fff;
   padding: 1rem 20px;
 
-  @include media-breakpoint-up(lg) {
-    padding: 1rem 2em;
-  }
-
   &--dark {
-    background-color: #fff;
-    color: #000;
-
-    .footerLink {
-      color: #000;
-    }
+    border-top: 1px solid $white;
   }
 
   &__left {

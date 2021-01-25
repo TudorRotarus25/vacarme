@@ -3,18 +3,12 @@
     <div class="header__links">
       <router-link to="/">
         <img
-          v-if="isDarkMode"
-          src="@/assets/icons/logo-dark.svg"
-          alt="studio vacarme logo"
-        >
-        <img
-          v-else
           src="@/assets/icons/logo.svg"
           alt="studio vacarme logo"
         >
       </router-link>
       <button
-        :class="`rightLink secondary-font ${isDarkMode && 'dark'}`"
+        class="rightLink secondary-font"
         @click="onMenuOpen"
       >
         menu
@@ -68,6 +62,7 @@ export default {
   left: 0;
   right: 0;
   z-index: 5;
+  box-sizing: border-box;
 
   @include media-breakpoint-up(md) {
     height: 105px;
@@ -78,7 +73,7 @@ export default {
   }
 
   &--dark {
-    background-color: #fff;
+    border-bottom: 1px solid $white;
   }
 
   &__links {
@@ -90,23 +85,11 @@ export default {
     justify-content: space-between;
     align-items: center;
 
-    @include media-breakpoint-up(md) {
-      padding: 0 32px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 1.5rem;
-    }
-
     .rightLink {
       font-size: 26px;
       line-height: 28px;
       color: $white;
       padding: 0;
-
-      &.dark {
-        color: $black;
-      }
 
       @include media-breakpoint-up(md) {
         font-size: 52px;

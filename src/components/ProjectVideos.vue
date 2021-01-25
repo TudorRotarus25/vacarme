@@ -4,7 +4,6 @@
       v-for="video in videos"
       :key="video.src"
       :class="`projectVideo projectVideo--${video.orientation}`"
-      v-view
     >
       <div :class="`videoContainer videoContainer--${video.orientation}`">
         <iframe
@@ -41,29 +40,13 @@ export default {
   @import "../styling/mixins";
 
   .projectVideos {
-    margin: 0 -20px 50px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    @include media-breakpoint-up(lg) {
-      margin: 0 0 7rem;
-    }
   }
 
   .projectVideo {
     flex-basis: 100%;
-    transform: translateY(50px);
-    transition: transform .7s ease-out;
-
-    @include media-breakpoint-up(lg) {
-      transform: translateY(7rem);
-    }
-
-    &.view-in,
-    &.view-out--above {
-      transform: translate(0);
-    }
 
     &--portrait {
       @include media-breakpoint-up(lg) {
@@ -75,10 +58,10 @@ export default {
   .videoContainer {
     position: relative;
     padding-bottom: 50%;
-    margin-top: 50px;
+    margin: 10px;
 
     @include media-breakpoint-up(lg) {
-      margin-top: 7rem;
+      margin: 20px;
     }
 
     &--portrait {

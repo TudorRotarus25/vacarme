@@ -38,6 +38,9 @@
     <div :class="`backdrop ${project.color}`" />
     <div class="cta">
       <div class="cta__text">
+        <div class="cat__title">
+          {{ project.title }}
+        </div>
         {{ project.cta }}
       </div>
       <span class="cta__arrowRight">

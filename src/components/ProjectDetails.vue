@@ -1,45 +1,53 @@
 <template>
   <div :class="`project ${isDarkMode ? 'project--dark' : ''}`">
-    <h1 class="title">{{ projectData.name }}</h1>
-    <div class="projectDescription">
-      <p
-        v-for="(paragraph, index) in projectData.paragraphs"
-        :key="index"
-        v-html="paragraph"
+    <div class="projectContent">
+      <div class="projectDescription">
+        <p
+          v-for="(paragraph, index) in projectData.paragraphs"
+          :key="index"
+          v-html="paragraph"
+        />
+      </div>
+      <div class="projectInfo">
+        <h1 class="title">{{ projectData.name }}</h1>
+        <div class="projectDetails">
+          <div class="projectDetails__item">
+            <h2 class="projectDetails__key">
+              Domaine
+            </h2>
+            <div class="projectDetails__label secondary-font">
+              {{ projectData.domain }}
+            </div>
+          </div>
+          <div class="projectDetails__item">
+            <h2 class="projectDetails__key">
+              Année
+            </h2>
+            <div class="projectDetails__label secondary-font">
+              {{ projectData.year }}
+            </div>
+          </div>
+          <div class="projectDetails__item">
+            <h2 class="projectDetails__key">
+              Client
+            </h2>
+            <div class="projectDetails__label secondary-font">
+              {{ projectData.client }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="projectMedia">
+      <ProjectVideos
+        v-if="!isLoading && projectData.projectVideos && projectData.projectVideos.length"
+        :videos="projectData.projectVideos"
+      />
+      <ProjectImages
+        v-if="!isLoading"
+        :images="projectImages"
       />
     </div>
-    <hr class="spacer">
-    <div class="projectInfo">
-      <div class="projectInfo__left">
-        <div>
-          <h2 class="h5">Projet</h2>
-          <div>{{ projectData.project }}</div>
-        </div>
-        <div>
-          <h2 class="h5">Domaine</h2>
-          <div>{{ projectData.domain }}</div>
-        </div>
-        <div>
-          <h2 class="h5">Année</h2>
-          <div>{{ projectData.year }}</div>
-        </div>
-      </div>
-      <div class="projectInfo__right">
-        <div>
-          <h2 class="h5">Client</h2>
-          <div>{{ projectData.client }}</div>
-        </div>
-      </div>
-    </div>
-    <ProjectVideos
-      v-if="!isLoading && projectData.projectVideos && projectData.projectVideos.length"
-      :videos="projectData.projectVideos"
-    />
-    <ProjectImages
-      v-if="!isLoading"
-      :preset="projectData.projectImagesPreset"
-      :images="projectImages"
-    />
   </div>
 </template>
 
@@ -75,73 +83,84 @@ export default {
   @import "../styling/mixins";
 
   .project {
-    padding: 40px 20px 10px;
+    font-size: 16px;
+    line-height: 20px;
 
     @include media-breakpoint-up(lg) {
-      padding: 4rem 6%;
+      display: flex;
     }
 
     &--dark {
       background-color: #000;
       color: #fff;
 
-      hr {
-        background-color: #fff;
+      .projectDetails {
+        border-bottom: 1px solid $white;
+
+        @include media-breakpoint-up(lg) {
+          border-bottom: 0;
+        }
+
+        &__item {
+          border-top: 1px solid $white;
+        }
       }
-    }
-  }
 
-  .title {
-    font-weight: 600;
-
-    @include media-breakpoint-up(lg) {
-      font-weight: bold;
-    }
-  }
-
-  .spacer {
-    margin: 20px 0;
-
-    @include media-breakpoint-up(lg) {
-      margin: 3em 0 2em;
+      .projectContent {
+        @include media-breakpoint-up(lg) {
+          border-right: 1px solid $white;
+        }
+      }
     }
   }
 
   .projectDescription {
-    font-size: 1.5rem;
+    padding: 15px 20px 10px;
   }
 
-  .projectInfo {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.7rem;
+  .title {
+    font-size: 40px;
+    line-height: 43px;
+    text-transform: uppercase;
+    margin: 30px 20px 10px;
+  }
 
-    @include media-breakpoint-up(md) {
-      font-size: 1rem;
-    }
-
-    .h5 {
-      font-size: 0.7rem;
-
-      @include media-breakpoint-up(md) {
-        font-size: 1rem;
-      }
-    }
-
-    &__left {
+  .projectContent {
+    @include media-breakpoint-up(lg) {
+      position: sticky;
+      top: 4.5rem;
+      border-right: 1px solid $black;
+      flex-basis: 400px;
+      flex-shrink: 0;
+      flex-grow: 0;
       display: flex;
+      flex-direction: column;
+      height: calc(100vh - 4.5rem);
+      overflow: auto;
+      justify-content: space-between;
+    }
+  }
 
-      > div {
-        margin-right: 20px;
+  .projectMedia {
+    flex-grow: 1;
+  }
 
-        @include media-breakpoint-up(lg) {
-          margin-right: 50px;
-        }
-      }
+  .projectDetails {
+    border-bottom: 1px solid $black;
+
+    @include media-breakpoint-up(lg) {
+      border-bottom: 0;
     }
 
-    &__right {
-      text-align: right;
+    &__item {
+      padding: 10px 20px;
+      border-top: 1px solid $black;
+    }
+
+    &__key {
+      font-size: 16px;
+      line-height: 21px;
+      margin: 0;
     }
   }
 </style>
