@@ -94,12 +94,10 @@ export default {
   border-bottom: 1px solid $white;
 
   @include media-breakpoint-up(md) {
-    padding: 0 32px;
     height: 105px;
   }
 
   @include media-breakpoint-up(lg) {
-    padding: 0 1.5rem;
     height: 4.5rem;
   }
 

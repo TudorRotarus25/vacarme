@@ -85,3 +85,7 @@ button {
 .secondary-font {
   font-family: "St Latex", sans-serif;
 }
+
+*:focus {
+  outline: none;
+}
