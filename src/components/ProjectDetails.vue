@@ -7,6 +7,15 @@
           :key="index"
           v-html="paragraph"
         />
+        <p v-if="projectData.url">
+          <a
+            class="projectLink"
+            target="_blank"
+            :href="`https://${projectData.url}`"
+          >
+            {{ projectData.url }} →
+          </a>
+        </p>
       </div>
       <div class="projectInfo">
         <h1 class="title">{{ projectData.name }}</h1>
@@ -116,6 +125,11 @@ export default {
 
   .projectDescription {
     padding: 15px 20px 10px;
+  }
+
+  .projectLink {
+    text-decoration: underline;
+    font-style: italic;
   }
 
   .title {
