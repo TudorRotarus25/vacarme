@@ -6,7 +6,7 @@
         slug: project.slug,
       },
     }"
-    class="project project--vertical"
+    :class="`project project--vertical ${alwaysActive && 'always-active'}`"
     @click="onClick"
   >
     <div class="project__content">
@@ -38,10 +38,12 @@
     <div :class="`backdrop ${project.color}`" />
     <div class="cta">
       <div class="cta__text">
-        <div class="cat__title">
-          {{ project.title }}
+        <div class="cta__title">
+          {{ project.name }}
         </div>
-        {{ project.cta }}
+        <div class="cta__subtitle secondary-font">
+          {{ project.cta }}
+        </div>
       </div>
       <span class="cta__arrowRight">
         <svg viewBox="0 0 73.06 28.93" xmlns="http://www.w3.org/2000/svg">
@@ -63,6 +65,10 @@ export default {
   props: {
     project: {
       type: Object,
+    },
+    alwaysActive: {
+      type: Boolean,
+      default: false,
     },
   },
   methods: {
@@ -92,7 +98,8 @@ $projectPadding: 5rem;
   user-select: none;
   flex-basis: 33.33%;
 
-  &:hover {
+  &:hover,
+  &.always-active {
     .project__shape {
       transform: rotateY(180deg);
     }
@@ -108,7 +115,9 @@ $projectPadding: 5rem;
     .backdrop {
       opacity: 1;
     }
+  }
 
+  &:hover {
     .cta {
       background-color: #000;
 
@@ -130,7 +139,7 @@ $projectPadding: 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
+      padding: 12px 15px;
     }
   }
 
@@ -202,8 +211,15 @@ $projectPadding: 5rem;
     height: 1rem;
   }
 
-  &__arrowUp svg {
-    width: 1rem;
+  &__title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 23px;
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    line-height: 19px;
   }
 }
 

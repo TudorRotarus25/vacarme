@@ -11,13 +11,18 @@
         class="rightLink secondary-font"
         @click="onMenuOpen"
       >
-        menu
+        <img
+          src="@/assets/icons/menu.svg"
+          alt="studio vacarme logo"
+        >
       </button>
     </div>
-    <BurgerMenu
-      v-if="isMenuOpen"
-      :onMenuClose="onMenuClose"
-    />
+    <transition name="drop">
+      <BurgerMenu
+        v-if="isMenuOpen"
+        :onMenuClose="onMenuClose"
+      />
+    </transition>
   </header>
 </template>
 
@@ -25,6 +30,8 @@
 import { mapState } from 'vuex';
 
 import BurgerMenu from '@/components/BurgerMenu.vue';
+
+const NO_SCROLL_CLASS_NAME = 'noscroll';
 
 export default {
   name: 'Header',
@@ -41,9 +48,11 @@ export default {
   }),
   methods: {
     onMenuClose() {
+      document.body.classList.remove(NO_SCROLL_CLASS_NAME);
       this.isMenuOpen = false;
     },
     onMenuOpen() {
+      document.body.classList.add(NO_SCROLL_CLASS_NAME);
       this.isMenuOpen = true;
     },
   },
@@ -86,20 +95,7 @@ export default {
     align-items: center;
 
     .rightLink {
-      font-size: 26px;
-      line-height: 28px;
-      color: $white;
       padding: 0;
-
-      @include media-breakpoint-up(md) {
-        font-size: 52px;
-        line-height: 54px;
-      }
-
-      @include media-breakpoint-up(lg) {
-        font-size: 2rem;
-        line-height: 2.2rem;
-      }
     }
   }
 
@@ -122,5 +118,13 @@ img {
   @include media-breakpoint-up(lg) {
     height: 1.5rem;
   }
+}
+
+.drop-enter-active, .drop-leave-active {
+  transition: transform .4s;
+}
+
+.drop-enter, .drop-leave-to {
+  transform: translateY(-100vh);
 }
 </style>

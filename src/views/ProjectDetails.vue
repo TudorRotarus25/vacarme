@@ -9,6 +9,7 @@ import { mapState } from 'vuex';
 import ProjectDetails from '@/components/ProjectDetails.vue';
 import {
   ACTION_POPULATE_PROJECT_DETAILS,
+  ACTION_POPULATE_PROJECTS,
   MUTATION_SET_DARK_MODE,
 } from '@/constants/storeConstants';
 
@@ -25,6 +26,7 @@ export default {
   created() {
     const { slug } = this.$route.params;
     this.$store.dispatch(ACTION_POPULATE_PROJECT_DETAILS, slug);
+    this.$store.dispatch(ACTION_POPULATE_PROJECTS);
   },
   beforeDestroy() {
     this.$store.commit(MUTATION_SET_DARK_MODE, { isDarkMode: false });

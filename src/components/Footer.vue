@@ -1,22 +1,19 @@
 <template>
   <footer :class="`footer ${isDarkMode ? 'footer--dark' : ''} secondary-font`">
-    <div class="footer__left">
-      Copyright © 2021 Studio Vacarme, tous droits réservés.
-    </div>
-    <div class="footer__right">
+    <div class="footer__links">
       <a
         class="footerLink"
         href="https://www.instagram.com/studiovacarme/"
         target="_blank"
       >
-        instagram
+        instagram,
       </a>
       <a
         class="footerLink"
         href="https://www.behance.net/studiovacarme"
         target="_blank"
       >
-        behance
+        behance,
       </a>
       <router-link
         class="footerLink"
@@ -24,6 +21,9 @@
       >
         contact
       </router-link>
+    </div>
+    <div class="footer__copyright">
+      Copyright © 2021 Studio Vacarme, tous droits réservés.
     </div>
   </footer>
 </template>
@@ -44,17 +44,21 @@ export default {
 @import "../styling/mixins";
 
 .footer {
-  display: flex;
-  justify-content: space-between;
   background-color: #000;
   color: #fff;
   padding: 1rem 20px;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
 
   &--dark {
     border-top: 1px solid $white;
   }
 
-  &__left {
+  &__copyright {
     br {
       @include media-breakpoint-up(lg) {
         display: none;
@@ -62,24 +66,27 @@ export default {
     }
   }
 
-  &__right {
-    text-align: right;
+  &__links {
+    margin-bottom: 40px;
+
+    @include media-breakpoint-up(lg) {
+      text-align: right;
+      margin-bottom: 0;
+    }
 
     a {
-      display: block;
-
-      @include media-breakpoint-up(lg) {
-        display: inline-block;
-      }
+      display: inline-block;
     }
   }
 }
 
 .footerLink {
   color: #fff;
+  margin-right: 10px;
 
   @include media-breakpoint-up(lg) {
-    margin-left: 2rem;
+    margin-left: .5rem;
+    margin-right: 0;
   }
 }
 </style>

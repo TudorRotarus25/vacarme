@@ -40,6 +40,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   z-index: 3;
+  font-weight: bold;
 
   @include media-breakpoint-up(md) {
     font-size: 40px;
@@ -47,13 +48,24 @@ export default {
   }
 
   &__left {
-    text-decoration: underline;
     text-transform: uppercase;
+    border-bottom: 2px solid $black;
+  }
+
+  &__right {
+    &:hover {
+      opacity: .7;
+
+      .arrow-icon {
+        transform: translateX(-10px);
+      }
+    }
   }
 }
 
 .arrow-icon {
   height: 14px;
+  transition: all .3s ease-out;
 
   @include media-breakpoint-up(md) {
     height: 28px;

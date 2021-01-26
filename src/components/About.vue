@@ -101,6 +101,13 @@ export default {
 .team {
   background-color: $color-accent;
   border-top: 1px solid $black;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+
+  @include media-breakpoint-up(md) {
+    min-height: calc(100vh - 105px);
+  }
 
   @include media-breakpoint-up(lg) {
     flex-shrink: 0;
@@ -109,28 +116,25 @@ export default {
     height: calc(100vh - 4.5rem - 3.1rem);
     border-top: 0;
     border-left: 1px solid $black;
-    display: flex;
-    flex-direction: column;
   }
 
   &__image-container {
-    @include media-breakpoint-up(lg) {
-      flex-grow: 1;
-      display: flex;
-      align-items: center;
-    }
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
 
   &__image {
     display: block;
     width: 60%;
     margin: 0 auto;
-    padding: 110px 0 100px;
+    padding: 20px 0 20px;
   }
 
   &__email {
-    font-size: calc(9vw - 3px);
-    line-height: calc(9vw + 3px);
+    font-size: calc(8.75vw - 3px);
+    line-height: calc(8.75vw + 3px);
+    font-weight: bold;
     text-align: center;
     margin-bottom: 12px;
 
@@ -157,6 +161,10 @@ export default {
       &__right {
         margin-left: auto;
         text-align: right;
+      }
+
+      &__name {
+        font-weight: bold;
       }
     }
   }

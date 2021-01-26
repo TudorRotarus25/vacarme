@@ -94,6 +94,7 @@ export default {
   .project {
     font-size: 16px;
     line-height: 20px;
+    letter-spacing: 0.02em;
 
     @include media-breakpoint-up(lg) {
       display: flex;
@@ -175,6 +176,10 @@ export default {
       font-size: 16px;
       line-height: 21px;
       margin: 0;
+    }
+
+    &__label  {
+      letter-spacing: 0;
     }
   }
 </style>

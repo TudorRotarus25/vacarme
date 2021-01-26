@@ -31,7 +31,14 @@
         </div>
       </div>
       <div class="cta">
-        <div>{{ project.cta }}</div>
+        <div>
+          <div class="cta__title">
+            {{ project.name }}
+          </div>
+          <div class="cta__subtitle secondary-font">
+            {{ project.cta }}
+          </div>
+        </div>
         <img
           class="cta__image"
           src="@/assets/icons/arrow-right.svg"
@@ -89,12 +96,23 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
+    padding: 12px 15px;
     border-top: 1px solid $text-primary;
     border-bottom: 1px solid $text-primary;
 
     &__image {
       height: 1rem;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    &__subtitle {
+      font-size: 15px;
+      line-height: 19px;
     }
   }
 

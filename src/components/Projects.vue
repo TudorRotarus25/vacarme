@@ -4,6 +4,7 @@
       v-for="project in projects"
       :key="project.name"
       :project="project"
+      :always-active="category !== null"
     />
   </div>
 </template>
@@ -17,7 +18,10 @@ export default {
     Project,
   },
   props: {
-    category: String,
+    category: {
+      type: String,
+      default: null,
+    },
   },
   computed: {
     projects() {

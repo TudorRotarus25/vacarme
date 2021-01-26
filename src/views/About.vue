@@ -4,11 +4,15 @@
 
 <script>
 import About from '@/components/About.vue';
+import { ACTION_POPULATE_PROJECTS } from '@/constants/storeConstants';
 
 export default {
   name: 'about',
   components: {
     About,
+  },
+  created() {
+    this.$store.dispatch(ACTION_POPULATE_PROJECTS);
   },
   metaInfo: {
     title: 'Studio Vacarme — Studio design graphique Paris',
