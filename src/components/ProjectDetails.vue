@@ -121,6 +121,10 @@ export default {
           border-right: 1px solid $white;
         }
       }
+
+      a {
+        color: $white ;
+      }
     }
   }
 
