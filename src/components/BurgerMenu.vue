@@ -72,6 +72,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import AboutMenuItem from '@/components/AboutMenuItem.vue';
 
 export default {
@@ -83,9 +84,9 @@ export default {
     onMenuClose: Function,
   },
   computed: {
-    categories() {
-      return this.$store.getters.categories;
-    },
+    ...mapState({
+      categories: 'categories',
+    }),
   },
   watch: {
     $route() {
@@ -181,7 +182,7 @@ export default {
 .menu {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px - 36px);
+  height: calc(100vh - 60px - 41px);
   overflow: auto;
 
   @include media-breakpoint-up(md) {
@@ -223,18 +224,16 @@ export default {
 }
 
 .about-link {
-  width: 100%;
-  display: block;
+  display: inline-block;
 }
 
 .footer {
-  font-size: 12px;
+  font-size: 16px;
   padding: 10px 20px;
   border-top: 1px solid $white;
   font-weight: lighter;
 
   @include media-breakpoint-up(md) {
-    font-size: 16px;
     text-align: right;
   }
 

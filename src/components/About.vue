@@ -113,7 +113,8 @@ export default {
     flex-shrink: 0;
     flex-grow: 0;
     width: 400px;
-    height: calc(100vh - 4.5rem - 3.1rem);
+    height: calc(100vh - 4.5rem);
+    overflow: auto;
     border-top: 0;
     border-left: 1px solid $black;
   }

@@ -54,8 +54,6 @@ export default {
 
   &__right {
     &:hover {
-      opacity: .7;
-
       .arrow-icon {
         transform: translateX(-10px);
       }
@@ -65,7 +63,7 @@ export default {
 
 .arrow-icon {
   height: 14px;
-  transition: all .3s ease-out;
+  transition: transform .3s ease-out;
 
   @include media-breakpoint-up(md) {
     height: 28px;

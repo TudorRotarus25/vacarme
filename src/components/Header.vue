@@ -30,6 +30,7 @@
 import { mapState } from 'vuex';
 
 import BurgerMenu from '@/components/BurgerMenu.vue';
+import { ACTION_POPULATE_CATEGORIES } from '@/constants/storeConstants';
 
 const NO_SCROLL_CLASS_NAME = 'noscroll';
 
@@ -42,6 +43,9 @@ export default {
     return {
       isMenuOpen: false,
     };
+  },
+  created() {
+    this.$store.dispatch(ACTION_POPULATE_CATEGORIES);
   },
   computed: mapState({
     isDarkMode: 'isDarkMode',

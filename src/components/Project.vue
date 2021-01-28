@@ -9,7 +9,7 @@
     :class="`project project--vertical ${alwaysActive && 'always-active'}`"
     @click="onClick"
   >
-    <div class="project__content">
+    <div class="project__content secondary-font">
       <img
         class="project__hoverImage"
         :src="project.hoverImageUrl"
@@ -108,12 +108,14 @@ $projectPadding: 5rem;
       opacity: 1;
     }
 
-    .tagline {
-      opacity: 0;
-    }
-
     .backdrop {
       opacity: 1;
+    }
+  }
+
+  &:hover:not(.always-active) {
+    .tagline {
+      opacity: 0;
     }
   }
 
@@ -123,6 +125,10 @@ $projectPadding: 5rem;
 
       .cta__text {
         color: #fff;
+      }
+
+      .cta__arrowRight {
+        transform: translateX(-10px);
       }
 
       path {
@@ -207,8 +213,12 @@ $projectPadding: 5rem;
   position: relative;
   background-color: #fff;
 
-  &__arrowRight svg {
-    height: 1rem;
+  &__arrowRight {
+    transition: transform .3s ease-out;
+
+    svg {
+      height: 1rem;
+    }
   }
 
   &__title {

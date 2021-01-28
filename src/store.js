@@ -3,11 +3,13 @@ import Vuex from 'vuex';
 import axios from 'axios';
 import {
   MUTATION_SET_PROJECTS,
+  MUTATION_SET_CATEGORIES,
   MUTATION_SET_PROJECT_DETAILS,
   MUTATION_SET_DARK_MODE,
   MUTATION_SET_IS_LOADING,
   MUTATION_SET_LOADING_COLOR,
   ACTION_POPULATE_PROJECTS,
+  ACTION_POPULATE_CATEGORIES,
   ACTION_POPULATE_PROJECT_DETAILS,
   ACTION_SET_LOADING_COLOR,
 } from '@/constants/storeConstants';
@@ -20,11 +22,15 @@ const store = new Vuex.Store({
     loadingColor: null,
     isDarkMode: false,
     projects: [],
+    categories: [],
     projectData: {},
   },
   mutations: {
     [MUTATION_SET_PROJECTS]: (state, { projects }) => {
       state.projects = projects;
+    },
+    [MUTATION_SET_CATEGORIES]: (state, { categories }) => {
+      state.categories = categories;
     },
     [MUTATION_SET_PROJECT_DETAILS]: (state, { projectData }) => {
       state.projectData = projectData;
@@ -62,6 +68,25 @@ const store = new Vuex.Store({
         commit(MUTATION_SET_IS_LOADING, { isLoading: false });
       }
     },
+    [ACTION_POPULATE_CATEGORIES]: async ({ commit, state }) => {
+      if (state.categories.length) {
+        return;
+      }
+
+      try {
+        const response = await axios.get('/categories');
+
+        if (!response.data || !response.data.length) {
+          return;
+        }
+
+        const categories = response.data.map(({ name }) => name);
+
+        commit(MUTATION_SET_CATEGORIES, { categories });
+      } catch (e) {
+        console.error(e);
+      }
+    },
     [ACTION_POPULATE_PROJECT_DETAILS]: async ({ commit }, slug) => {
       try {
         commit(MUTATION_SET_IS_LOADING, { isLoading: true });
@@ -80,21 +105,6 @@ const store = new Vuex.Store({
     },
     [ACTION_SET_LOADING_COLOR]: ({ commit }, color) => {
       commit(MUTATION_SET_LOADING_COLOR, { color });
-    },
-  },
-  getters: {
-    categories: (state) => {
-      const uniqueCategories = new Set();
-      state.projects.forEach((project) => {
-        if (!project.categories) {
-          return;
-        }
-        project.categories.forEach((category) => {
-          uniqueCategories.add(category);
-        });
-      });
-
-      return Array.from(uniqueCategories).sort();
     },
   },
 });

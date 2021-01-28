@@ -46,7 +46,8 @@ export default {
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 1rem 20px;
+  padding: 11px 20px;
+  font-size: 16px;
 
   @include media-breakpoint-up(lg) {
     display: flex;

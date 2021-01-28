@@ -126,6 +126,17 @@ export default {
 
   .projectDescription {
     padding: 15px 20px 10px;
+
+    @include media-breakpoint-up(lg) {
+      height: calc(100vh - 4.5rem - 269px);
+      overflow: auto;
+    }
+
+    p {
+      @include media-breakpoint-up(lg) {
+        max-width: 270px;
+      }
+    }
   }
 
   .projectLink {
@@ -151,7 +162,6 @@ export default {
       display: flex;
       flex-direction: column;
       height: calc(100vh - 4.5rem);
-      overflow: auto;
       justify-content: space-between;
     }
   }

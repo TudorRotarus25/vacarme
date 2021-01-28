@@ -48,3 +48,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "../styling/variables";
+@import "../styling/mixins";
+
+.category {
+  min-height: calc(100vh - 4.5rem - 72px - 41px);
+}
+</style>
