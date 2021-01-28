@@ -6,7 +6,7 @@
         slug: project.slug,
       },
     }"
-    :class="`project project--vertical ${alwaysActive && 'always-active'}`"
+    :class="`project project--vertical ${alwaysActive && 'always-active'} ${project.taglineDarkMode && 'dark-mode'}`"
     @click="onClick"
   >
     <div class="project__content secondary-font">
@@ -246,6 +246,12 @@ $projectPadding: 5rem;
   &--bottom {
     bottom: 7rem;
     right: 3rem;
+  }
+}
+
+.always-active {
+  &.dark-mode {
+    color: $white;
   }
 }
 </style>
