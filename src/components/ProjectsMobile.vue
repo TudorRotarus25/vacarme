@@ -17,18 +17,6 @@
           :src="project.mobileImageUrl"
           alt="project.slug"
         >
-        <div
-          class="tagline tagline--top"
-          :style="`transform: rotate(${project.taglineAngle}deg)`"
-        >
-          {{ project.taglineTop }}
-        </div>
-        <div
-          class="tagline tagline--bottom"
-          :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
-        >
-          {{ project.taglineBottom }}
-        </div>
       </div>
       <div class="cta">
         <div>
@@ -96,7 +84,7 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 15px;
+    padding: 12px 20px;
     border-top: 1px solid $text-primary;
     border-bottom: 1px solid $text-primary;
 
@@ -113,21 +101,6 @@ export default {
     &__subtitle {
       font-size: 15px;
       line-height: 19px;
-    }
-  }
-
-  .tagline {
-    position: absolute;
-    font-size: 3rem;
-
-    &--top {
-      top: 14vw;
-      left: 20px;
-    }
-
-    &--bottom {
-      bottom: 14vw;
-      right: 20px;
     }
   }
 </style>

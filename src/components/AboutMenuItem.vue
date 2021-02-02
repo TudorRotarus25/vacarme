@@ -26,7 +26,7 @@ export default {
   text-align: center;
   position: relative;
   padding: 20px 0;
-  margin: 45px 0 75px;
+  margin: 55px 0;
   display: inline-block;
   white-space: nowrap;
 

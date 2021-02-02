@@ -137,6 +137,12 @@ $projectPadding: 5rem;
     }
   }
 
+  &.always-active {
+    .tagline {
+      opacity: 0;
+    }
+  }
+
   &--vertical {
     flex-direction: column;
 
@@ -145,7 +151,7 @@ $projectPadding: 5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 15px;
+      padding: 12px 20px;
     }
   }
 
@@ -221,6 +227,10 @@ $projectPadding: 5rem;
     }
   }
 
+  &__text {
+    overflow: hidden;
+  }
+
   &__title {
     font-weight: bold;
     font-size: 18px;
@@ -230,6 +240,8 @@ $projectPadding: 5rem;
   &__subtitle {
     font-size: 15px;
     line-height: 19px;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 
