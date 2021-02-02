@@ -48,13 +48,9 @@
       </div>
     </div>
     <div class="projectMedia">
-      <ProjectVideos
-        v-if="!isLoading && projectData.projectVideos && projectData.projectVideos.length"
-        :videos="projectData.projectVideos"
-      />
-      <ProjectImages
+      <ProjectMedia
         v-if="!isLoading"
-        :images="projectImages"
+        :media-items="projectMedia"
       />
     </div>
   </div>
@@ -62,14 +58,12 @@
 
 <script>
 import { mapState } from 'vuex';
-import ProjectImages from './ProjectImages.vue';
-import ProjectVideos from './ProjectVideos.vue';
+import ProjectMedia from '@/components/ProjectMedia.vue';
 
 export default {
   name: 'ProjectDetails',
   components: {
-    ProjectImages,
-    ProjectVideos,
+    ProjectMedia,
   },
   computed: {
     ...mapState({
@@ -77,11 +71,11 @@ export default {
       isLoading: 'isLoading',
       projectData: 'projectData',
     }),
-    projectImages() {
+    projectMedia() {
       if (window.innerWidth < 992) {
-        return this.projectData.projectMobileImages;
+        return this.projectData.projectMobileMedia;
       }
-      return this.projectData.projectDesktopImages;
+      return this.projectData.projectDesktopMedia;
     },
   },
 };

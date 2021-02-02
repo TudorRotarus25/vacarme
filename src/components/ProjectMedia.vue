@@ -1,48 +1,42 @@
 <template>
-  <div class="projectImages">
+  <div class="media-container">
     <LoadingSpinner v-if="!isUiLoaded" />
     <div
-      :class="`imageContainer imageContainer-${index + 1}`"
-      v-for="image in images"
-      :key="image"
+      v-for="item in mediaItems"
+      :key="item.src"
     >
+      <ProjectVideo
+        v-if="item.type === 'video'"
+        :orientation="item.orientation"
+        :src="item.src"
+      />
       <img
+        v-else
         class="image"
-        :src="image"
+        :src="item.src"
         :alt="`image-${index}`"
-        draggable="false"
       >
     </div>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
-import LoadingSpinner from './LoadingSpinner.vue';
+import LoadingSpinner from '@/components/LoadingSpinner.vue';
+import ProjectVideo from '@/components/ProjectVideo.vue';
 
 export default {
-  name: 'ProjectImages',
-  components: { LoadingSpinner },
+  name: 'ProjectMedia',
+  components: {
+    LoadingSpinner,
+    ProjectVideo,
+  },
   props: {
-    images: {
+    mediaItems: {
       type: Array,
       default() {
         return [];
       },
     },
-  },
-  computed: {
-    isUiLoaded() {
-      for (let index = 0; index < Math.min(3, this.numberOfImages); index += 1) {
-        if (!this.imagesLoaded[index]) {
-          return false;
-        }
-      }
-      return true;
-    },
-    ...mapState({
-      isDarkMode: 'isDarkMode',
-    }),
   },
   data() {
     return {
@@ -70,6 +64,16 @@ export default {
       });
     });
   },
+  computed: {
+    isUiLoaded() {
+      for (let index = 0; index < Math.min(3, this.numberOfImages); index += 1) {
+        if (!this.imagesLoaded[index]) {
+          return false;
+        }
+      }
+      return true;
+    },
+  },
 };
 </script>
 
@@ -80,7 +84,7 @@ export default {
 @import "../styling/variables";
 @import "../styling/mixins";
 
-.imageContainer {
+.media-container {
   .image {
     display: block;
     width: 100%;

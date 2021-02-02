@@ -1,14 +1,12 @@
 <template>
   <div class="projectVideos">
     <div
-      v-for="video in videos"
-      :key="video.src"
-      :class="`projectVideo projectVideo--${video.orientation}`"
+      :class="`projectVideo projectVideo--${orientation}`"
     >
-      <div :class="`videoContainer videoContainer--${video.orientation}`">
+      <div :class="`videoContainer videoContainer--${orientation}`">
         <iframe
           class="videoContainer__iframe"
-          :src="video.src"
+          :src="src"
           frameborder="0"
           allow="autoplay; fullscreen"
           allowfullscreen
@@ -22,11 +20,13 @@
 export default {
   name: 'ProjectImages',
   props: {
-    videos: {
-      type: Array,
-      default() {
-        return [];
-      },
+    src: {
+      type: String,
+      default: '',
+    },
+    orientation: {
+      type: String,
+      default: 'landscape',
     },
   },
 };
