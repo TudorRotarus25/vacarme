@@ -9,31 +9,39 @@
     :class="`project project--vertical ${alwaysActive && 'always-active'} ${project.taglineDarkMode && 'dark-mode'}`"
     @click="onClick"
   >
-    <div class="project__content secondary-font">
-      <img
-        class="project__hoverImage"
-        :src="project.hoverImageUrl"
-        :alt="project.slug"
-        draggable="false"
-      >
-      <img
-        class="project__shape"
-        :src="project.shapeUrl"
-        :alt="project.slug"
-        draggable="false"
-      >
-      <div
-        class="tagline tagline--top"
-        :style="`transform: rotate(${project.taglineAngle}deg)`"
-      >
-        {{ project.taglineTop }}
+    <div class="project__image-container">
+      <div class="project__content secondary-font">
+        <img
+          class="project__hoverImage"
+          :src="project.hoverImageUrl"
+          :alt="project.slug"
+          draggable="false"
+        >
+        <img
+          class="project__shape"
+          :src="project.shapeUrl"
+          :alt="project.slug"
+          draggable="false"
+        >
+        <div
+          class="tagline tagline--top"
+          :style="`transform: rotate(${project.taglineAngle}deg)`"
+        >
+          {{ project.taglineTop }}
+        </div>
+        <div
+          class="tagline tagline--bottom"
+          :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
+        >
+          {{ project.taglineBottom }}
+        </div>
       </div>
-      <div
-        class="tagline tagline--bottom"
-        :style="`transform: rotate(${0 - project.taglineAngle}deg)`"
+      <img
+        v-if="alwaysActive && project.thirdOverlayImageUrl"
+        class="third-overlay"
+        :src="project.thirdOverlayImageUrl"
+        alt=""
       >
-        {{ project.taglineBottom }}
-      </div>
     </div>
     <div :class="`backdrop ${project.color}`" />
     <div class="cta">
@@ -135,6 +143,10 @@ $projectPadding: 5rem;
         fill: #fff;
       }
     }
+
+    .third-overlay {
+      opacity: 1;
+    }
   }
 
   &.always-active {
@@ -187,6 +199,10 @@ $projectPadding: 5rem;
     &.green {
       background-color: $green;
     }
+  }
+
+  &__image-container {
+    position: relative;
   }
 
   &__content {
@@ -261,9 +277,15 @@ $projectPadding: 5rem;
   }
 }
 
-.always-active {
-  &.dark-mode {
-    color: $white;
-  }
+.third-overlay {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  opacity: 0;
 }
 </style>

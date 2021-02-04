@@ -1,7 +1,10 @@
 <template>
-  <div class="burger-menu">
+  <div class="burger-menu" :style="`height: ${realHeight}px`">
     <div class="header">
-      <router-link to="/">
+      <router-link
+        to="/"
+        @click.native.native="onMenuClose"
+      >
         <img
           class="logo"
           src="@/assets/icons/logo.svg"
@@ -17,6 +20,7 @@
         <router-link
           class="about-link"
           to="/about"
+          @click.native="onMenuClose"
         >
           <AboutMenuItem/>
         </router-link>
@@ -30,6 +34,7 @@
           <router-link
             class="menu-item__link"
             :to="{ name: 'category', params: { category: encodeURI(category) } }"
+            @click.native="onMenuClose"
           >
             {{ category }}
           </router-link>
@@ -38,6 +43,7 @@
           <router-link
             class="menu-item__link"
             to="/"
+            @click.native="onMenuClose"
           >
             ALL
           </router-link>
@@ -83,14 +89,23 @@ export default {
   props: {
     onMenuClose: Function,
   },
+  data() {
+    return {
+      realHeight: 0,
+    };
+  },
+  created() {
+    this.populateRealHeight();
+    window.onresize = this.populateRealHeight;
+  },
   computed: {
     ...mapState({
       categories: 'categories',
     }),
   },
-  watch: {
-    $route() {
-      this.onMenuClose();
+  methods: {
+    populateRealHeight() {
+      this.realHeight = window.innerHeight;
     },
   },
 };
@@ -103,12 +118,13 @@ export default {
 .burger-menu {
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
   background-color: $black;
   color: $white;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -182,16 +198,8 @@ export default {
 .menu {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 60px - 41px);
   overflow: auto;
-
-  @include media-breakpoint-up(md) {
-    height: calc(100vh - 105px - 41px);
-  }
-
-  @include media-breakpoint-up(lg) {
-    height: calc(100vh - 4.5rem - 41px);
-  }
+  flex-grow: 1;
 
   &__top {
     flex-grow: 1;
