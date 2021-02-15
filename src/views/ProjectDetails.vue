@@ -45,7 +45,11 @@ export default {
           content: metaDescription || defaultDescription,
         },
         {
-          name: 'og:url',
+          property: 'og:description',
+          content: metaDescription || defaultDescription,
+        },
+        {
+          property: 'og:url',
           content: `https://studiovacarme.com/project/${encodeURI(name)}`,
         },
       ],

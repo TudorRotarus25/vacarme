@@ -35,7 +35,11 @@ export default {
         content: 'Vacarme est un studio de conception graphique pluridisciplinaire basé à Paris, co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.',
       },
       {
-        name: 'og:url',
+        property: 'og:description',
+        content: 'Vacarme est un studio de conception graphique pluridisciplinaire basé à Paris, co-fondé par Valentin Jabaud, Camille Roulant et Margaux Giron.',
+      },
+      {
+        property: 'og:url',
         content: 'https://studiovacarme.com',
       },
     ],
