@@ -203,6 +203,7 @@ $projectPadding: 5rem;
 
   &__image-container {
     position: relative;
+    flex-grow: 1;
   }
 
   &__content {
