@@ -36,12 +36,11 @@
           {{ project.taglineBottom }}
         </div>
       </div>
-      <img
-        v-if="alwaysActive && project.thirdOverlayImageUrl"
+      <div
         class="third-overlay"
-        :src="project.thirdOverlayImageUrl"
-        alt=""
-      >
+        v-if="alwaysActive && project.thirdOverlayImageUrl"
+        :style="`background-image: url('${project.thirdOverlayImageUrl}')`"
+      />
     </div>
     <div :class="`backdrop ${project.color}`" />
     <div class="cta">
@@ -285,8 +284,9 @@ $projectPadding: 5rem;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
   opacity: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 </style>
